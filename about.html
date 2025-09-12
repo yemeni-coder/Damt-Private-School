@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عن المدرسة - مدرسة دمت الأهلية</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+
+    <style>
+        :root {
+            --primary-color: #6a1b9a;
+            --primary-light: #9c4dcc;
+            --primary-dark: #38006b;
+            --secondary-color: #f48fb1;
+            --accent-color: #ce93d8;
+            --light-color: #f3e5f5;
+            --dark-color: #4a148c;
+            --text-color: #333;
+            --light-text: #777;
+            --white: #fff;
+            --gradient: linear-gradient(135deg, #6a1b9a 0%, #8e24aa 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        body {
+            background-color: #f9f9f9;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header Styles */
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 60px;
+            margin-left: 15px;
+        }
+
+        .logo h1 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-menu li {
+            margin: 0 10px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 5px 10px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-menu a.active {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        /* Page Banner */
+        .page-banner {
+            background: var(--gradient), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--white);
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+
+        .page-banner .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .page-banner h2 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .page-banner p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* About Intro */
+        .about-intro {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            color: var(--primary-color);
+            margin-bottom: 25px;
+            font-size: 2rem;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .about-text h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 80px;
+            height: 4px;
+            background: var(--gradient);
+            border-radius: 2px;
+        }
+
+        .about-text h3 {
+            color: var(--dark-color);
+            margin: 30px 0 15px;
+            font-size: 1.5rem;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            line-height: 1.9;
+            font-size: 1.1rem;
+        }
+
+        .about-image {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .about-image:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 30px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.7s ease;
+        }
+
+        .about-image:hover img {
+            transform: scale(1.1);
+        }
+
+        /* History Section */
+        .history {
+            padding: 100px 0;
+            background: linear-gradient(to bottom, #f8f5f9 0%, #f3e5f5 100%);
+            position: relative;
+        }
+
+        .history::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 15px;
+            background: var(--gradient);
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 60px auto 0;
+            padding: 40px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 50%;
+            transform: translateX(50%);
+            width: 6px;
+            background: var(--primary-color);
+            border-radius: 3px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 70px;
+            width: 100%;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        .timeline-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-right: auto;
+            margin-left: 0;
+            text-align: left;
+        }
+
+        .timeline-year {
+            position: absolute;
+            top: 0;
+            right: 50%;
+            transform: translateX(50%);
+            background: var(--gradient);
+            color: var(--white);
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-weight: 800;
+            z-index: 1;
+            margin-right: -35px;
+            min-width: 100px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .timeline-content {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            width: calc(50% - 50px);
+            margin-right: 0;
+            margin-left: auto;
+            text-align: right;
+            transition: all 0.4s ease;
+            border-right: 5px solid var(--primary-color);
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .timeline-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        /* Values Section */
+        .values {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 35px;
+            margin-top: 50px;
+        }
+
+        .value-card {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .value-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 0;
+            background: var(--gradient);
+            z-index: -1;
+            transition: all 0.5s ease;
+            opacity: 0.9;
+        }
+
+        .value-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            color: var(--white);
+        }
+
+        .value-card:hover::before {
+            height: 100%;
+        }
+
+        .value-card:hover h3,
+        .value-card:hover .value-icon {
+            color: var(--white);
+        }
+
+        .value-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 25px;
+            transition: all 0.4s ease;
+        }
+
+        .value-card h3 {
+            margin-bottom: 20px;
+            color: var(--dark-color);
+            font-size: 1.5rem;
+            transition: all 0.4s ease;
+        }
+
+        .value-card p {
+            transition: all 0.4s ease;
+        }
+
+        /* Facilities Section */
+        .facilities {
+            padding: 100px 0;
+            background: linear-gradient(to bottom, #f3e5f5 0%, #f8f5f9 100%);
+        }
+
+        .facilities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 35px;
+            margin-top: 50px;
+        }
+
+        .facility-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .facility-card:hover {
+            transform: translateY(-10px) rotate(2deg);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .facility-img {
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .facility-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s ease;
+        }
+
+        .facility-card:hover .facility-img img {
+            transform: scale(1.15);
+        }
+
+        .facility-card h3 {
+            padding: 25px 25px 15px;
+            color: var(--primary-color);
+            font-size: 1.4rem;
+        }
+
+        .facility-card p {
+            padding: 0 25px 25px;
+            color: var(--light-text);
+            line-height: 1.7;
+        }
+
+        /* Statistics Section */
+        .statistics {
+            padding: 100px 0;
+            background: var(--gradient);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .statistics::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 200%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.05)"/></svg>');
+            background-size: 100% auto;
+            transform: rotate(15deg);
+            z-index: 1;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 40px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .stat-item {
+            padding: 30px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(5px);
+            transition: all 0.4s ease;
+        }
+
+        .stat-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-10px);
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .stat-label {
+            font-size: 1.3rem;
+            font-weight: 500;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-color);
+            color: var(--white);
+            padding: 80px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--secondary-color);
+            border-radius: 2px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: var(--light-color);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary-color);
+            padding-right: 8px;
+        }
+
+        .contact-info {
+            list-style: none;
+        }
+
+        .contact-info li {
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-info i {
+            margin-left: 12px;
+            color: var(--secondary-color);
+            font-size: 1.3rem;
+        }
+
+        .social-links {
+            display: flex;
+            margin-top: 25px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            margin-left: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--secondary-color);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 1.1rem;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+            
+            .timeline::before {
+                right: 40px;
+            }
+            
+            .timeline-year {
+                right: 40px;
+                transform: translateX(50%);
+            }
+            
+            .timeline-content {
+                width: calc(80% - 50px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-banner {
+                padding: 80px 0;
+            }
+            
+            .page-banner h2 {
+                font-size: 2.3rem;
+            }
+            
+            .timeline-content {
+                width: calc(100% - 80px);
+            }
+            
+            .stat-number {
+                font-size: 2.8rem;
+            }
+            
+            .about-text h2 {
+                font-size: 1.8rem;
+            }
+            
+            .about-text h3 {
+                font-size: 1.4rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .page-banner h2 {
+                font-size: 2rem;
+            }
+            
+            .page-banner p {
+                font-size: 1.1rem;
+            }
+            
+            .timeline-content {
+                padding: 25px 20px;
+            }
+            
+            .values-grid,
+            .facilities-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 25px;
+            }
+            
+            .stat-number {
+                font-size: 2.5rem;
+            }
+            
+            .stat-label {
+                font-size: 1.1rem;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+        }
+
+        /* Utilities */
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 50%;
+            transform: translateX(50%);
+            width: 100px;
+            height: 5px;
+            background: var(--gradient);
+            border-radius: 3px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--gradient);
+            color: var(--white);
+            padding: 14px 35px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .container {
+                padding: 0 30px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .philosophy-content {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+            
+            .qualifications-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            }
+            
+            .philosophy-image {
+                height: 350px;
+            }
+            
+            .philosophy-icon {
+                font-size: 6rem;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 90px;
+                right: -100%;
+                background: var(--white);
+                width: 280px;
+                height: calc(100vh - 90px);
+                flex-direction: column;
+                padding: 40px 20px;
+                transition: all 0.4s ease;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+                z-index: 999;
+            }
+            
+            .nav-menu.active {
+                right: 0;
+            }
+            
+            .nav-menu li {
+                margin: 15px 0;
+                width: 100%;
+                text-align: center;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-banner {
+                padding: 80px 0;
+            }
+            
+            .page-banner h2 {
+                font-size: 2.3rem;
+            }
+            
+            .philosophy-text h2 {
+                font-size: 1.8rem;
+            }
+            
+            .philosophy-text h3 {
+                font-size: 1.4rem;
+            }
+            
+            .method-tab {
+                padding: 12px 25px;
+                font-size: 1rem;
+            }
+            
+            .teaching-philosophy,
+            .qualifications,
+            .teaching-methods,
+            .professional-dev {
+                padding: 60px 0;
+            }
+            
+            .footer-grid {
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .page-banner h2 {
+                font-size: 2rem;
+            }
+            
+            .page-banner p {
+                font-size: 1.1rem;
+            }
+            
+            .logo h1 {
+                font-size: 1.5rem;
+            }
+            
+            .logo img {
+                height: 50px;
+            }
+            
+            .qualifications-grid,
+            .method-list,
+            .dev-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+            
+            .philosophy-image {
+                height: 250px;
+            }
+            
+            .philosophy-icon {
+                font-size: 4rem;
+            }
+            
+            .qualification-card {
+                padding: 30px 20px;
+            }
+            
+            .method-tab {
+                width: 100%;
+                margin: 5px 0;
+            }
+            
+            .methods-tabs {
+                flex-direction: column;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHJlY3QgeD0iMTAiIHk9IjEwIiB3aWR0aD0iODAiIGhlaWdodD0iODAiIGZpbGw9IiM2YTFiOWEiIGZpbGwtcnVsZT0iZXZlbm9kZCIgcng9IjEwIiByeT0iMTAiLz48cGF0aCBkPSJNMzAgMzVoNDBtLTIwIDIwaDQwbS0yMCAyMGg0MCIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjwvc3ZnPg==" alt="School Logo">
+                <h1>مدرسة دمت الأهلية</h1>
+            </div>
+            
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="about.html" class="active">عن المدرسة</a></li>
+                    <li><a href="academics.html">المناهج</a></li>
+                    <li><a href="faculty.html">المعلمات</a></li>
+                    <li><a href="admissions.html">القبول</a></li>
+                    <li><a href="contact.html">اتصل بنا</a></li>
+                </ul>
+                <div class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Banner -->
+    <section class="page-banner">
+        <div class="container">
+            <h2>عن مدرستنا</h2>
+            <p>تعرف على رحلة التميز والنجاح لمدرسة دمت الأهلية</p>
+        </div>
+    </section>
+
+    <!-- About Intro -->
+    <section class="about-intro">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>رسالتنا ورؤيتنا</h2>
+                    <p>تأسست مدرسة دمت الأهلية عام 2005 بهدف تقديم تعليم متميز يجمع بين الأصالة والحداثة، وترسيخ القيم الإسلامية والهوية العربية، مع مواكبة أحدث التطورات التربوية والتعليمية.</p>
+                    
+                    <h3>رؤيتنا</h3>
+                    <p>الريادة في تعليم البنات وإعداد جيل من القائدات الواعيات المتمسكات بقيمهن وهويتهن، والقادرات على المساهمة الفعالة في بناء مجتمعهن.</p>
+                    
+                    <h3>رسالتنا</h3>
+                    <p>توفير بيئة تعليمية محفزة وآمنة تمكن الطالبات من تطوير قدراتهن العلمية والشخصية، وتنمية مهارات التفكير النقدي والإبداعي، وغرس القيم الأخلاقية والإسلامية.</p>
+                </div>
+                <div class="about-image">
+                    <img src="building-3.jpg" alt="صورة للمدرسة">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- History Section -->
+    <section class="history">
+        <div class="container">
+            <h2 class="section-title">مسيرة التميز</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">2005</div>
+                    <div class="timeline-content">
+                        <h3>التأسيس</h3>
+                        <p>تأسيس المدرسة بفصول محدودة وبرؤية طموحة لتقديم تعليم متميز للبنات</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2010</div>
+                    <div class="timeline-content">
+                        <h3>التوسع الأول</h3>
+                        <p>توسعة المدرسة لتشمل مراحل تعليمية جديدة وزيادة عدد الفصول</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2015</div>
+                    <div class="timeline-content">
+                        <h3>اعتماد الجودة</h3>
+                        <p>الحصول على الاعتماد الأكاديمي واعتماد جودة التعليم</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2023</div>
+                    <div class="timeline-content">
+                        <h3>الريادة</h3>
+                        <p>تصنيف المدرسة ضمن أفضل 10 مدارس أهلية على مستوى المنطقة</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values">
+        <div class="container">
+            <h2 class="section-title">قيمنا الأساسية</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>التميز</h3>
+                    <p>نسعى للتميز في جميع جوانب العملية التعليمية والتربوية</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <h3>المسؤولية</h3>
+                    <p>نغرس قيم المسؤولية الاجتماعية والوطنية في طالباتنا</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>الإبداع</h3>
+                    <p>نشجع الإبداع والابتكار ونوفر البيئة المحفزة له</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>العمل الجماعي</h3>
+                    <p>نعزز روح العمل الجماعي والتعاون بين الطالبات والكادر التعليمي</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facilities Section -->
+    <section class="facilities">
+        <div class="container">
+            <h2 class="section-title">مرافقنا</h2>
+            <div class="facilities-grid">
+                <div class="facility-card">
+                    <div class="facility-img">
+                        <img src="https://images.unsplash.com/photo-1582582494705-f8ce0b0c24f0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="المكتبة">
+                    </div>
+                    <h3>مكتبة متكاملة</h3>
+                    <p>مكتبة غنية بمصادر المعرفة المتنوعة والحديثة، تشجع الطالبات على البحث والقراءة</p>
+                </div>
+                <div class="facility-card">
+                    <div class="facility-img">
+                        <img src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="المختبرات">
+                    </div>
+                    <h3>مختبرات علمية</h3>
+                    <p>مختبرات مجهزة بأحدث التقنيات لتجارب العلوم والفيزياء والكيمياء والأحياء</p>
+                </div>
+                <div class="facility-card">
+                    <div class="facility-img">
+                        <img src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="الملاعب">
+                    </div>
+                    <h3>ملاعب رياضية</h3>
+                    <p>مساحات خضراء وملاعب مجهزة لممارسة الأنشطة الرياضية المختلفة</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="statistics">
+        <div class="container">
+            <h2 class="section-title">مدرسة دمت في أرقام</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number" data-count="18">0</span>
+                    <span class="stat-label">عاماً من التميز</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="850">0</span>
+                    <span class="stat-label">طالبة</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="65">0</span>
+                    <span class="stat-label">معلمة وإدارية</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="25">0</span>
+                    <span class="stat-label">فصلاً دراسياً</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>عن المدرسة</h3>
+                    <p>مدرسة دمت الأهلية هي مدرسة خاصة للبنات تأسست عام 2005 بهدف تقديم تعليم متميز يجمع بين الأصالة والحداثة.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>روابط سريعة</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="about.html">عن المدرسة</a></li>
+                        <li><a href="academics.html">المناهج</a></li>
+                        <li><a href="faculty.html">المعلمات</a></li>
+                        <li><a href="admissions.html">القبول</a></li>
+                        <li><a href="contact.html">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>اتصل بنا</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> شارع الملك عبدالله، الرياض، السعودية</li>
+                        <li><i class="fas fa-phone"></i> 0096612345678</li>
+                        <li><i class="fas fa-envelope"></i> info@damet-school.edu.sa</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>جميع الحقوق محفوظة © 2023 مدرسة دمت الأهلية</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.nav-menu') && !e.target.closest('.mobile-menu-btn')) {
+                navMenu.classList.remove('active');
+            }
+        });
+
+        // Statistics Counter Animation
+        const counters = document.querySelectorAll('.stat-number');
+        const speed = 200;
+
+        const animateCounters = () => {
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-count');
+                const count = +counter.innerText;
+                const increment = Math.ceil(target / speed);
+                
+                if (count < target) {
+                    counter.innerText = Math.min(count + increment, target);
+                    setTimeout(animateCounters, 1);
+                }
+            });
+        };
+
+        // Start counter animation when section is in view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        observer.observe(document.querySelector('.statistics'));
+
+        // Timeline animation
+        const timelineItems = document.querySelectorAll('.timeline-item');
+        const timelineObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    timelineObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.3 });
+
+        timelineItems.forEach(item => {
+            timelineObserver.observe(item);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المناهج الدراسية - مدرسة دمت الأهلية</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        :root {
+            --primary-color: #6a1b9a;
+            --primary-light: #9c4dcc;
+            --primary-dark: #38006b;
+            --secondary-color: #f48fb1;
+            --accent-color: #ce93d8;
+            --light-color: #f3e5f5;
+            --dark-color: #4a148c;
+            --text-color: #333;
+            --light-text: #777;
+            --white: #fff;
+            --gradient: linear-gradient(135deg, #6a1b9a 0%, #8e24aa 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        body {
+            background-color: #f9f9f9;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header Styles - مطابقة تماماً للصفحة الأولى */
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 60px;
+            margin-left: 15px;
+        }
+
+        .logo h1 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-menu li {
+            margin: 0 10px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 5px 10px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-menu a.active {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        /* Page Banner */
+        .page-banner {
+            background: var(--gradient), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--white);
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+
+        .page-banner .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .page-banner h2 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .page-banner p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Academics Intro */
+        .academics-intro {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .academics-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .academics-text h2 {
+            color: var(--primary-color);
+            margin-bottom: 25px;
+            font-size: 2rem;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .academics-text h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 80px;
+            height: 4px;
+            background: var(--gradient);
+            border-radius: 2px;
+        }
+
+        .academics-text h3 {
+            color: var(--dark-color);
+            margin: 30px 0 15px;
+            font-size: 1.5rem;
+        }
+
+        .academics-text p {
+            margin-bottom: 20px;
+            line-height: 1.9;
+            font-size: 1.1rem;
+        }
+
+        .academics-image {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .academics-image:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 30px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .academics-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.7s ease;
+        }
+
+        .academics-image:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Programs Section */
+        .programs {
+            padding: 100px 0;
+            background: linear-gradient(to bottom, #f8f5f9 0%, #f3e5f5 100%);
+            position: relative;
+        }
+
+        .programs::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 15px;
+            background: var(--gradient);
+        }
+
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 35px;
+            margin-top: 50px;
+        }
+
+        .program-card {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .program-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 0;
+            background: var(--gradient);
+            z-index: -1;
+            transition: all 0.5s ease;
+            opacity: 0.9;
+        }
+
+        .program-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            color: var(--white);
+        }
+
+        .program-card:hover::before {
+            height: 100%;
+        }
+
+        .program-card:hover h3,
+        .program-card:hover .program-icon {
+            color: var(--white);
+        }
+
+        .program-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 25px;
+            transition: all 0.4s ease;
+        }
+
+        .program-card h3 {
+            margin-bottom: 20px;
+            color: var(--dark-color);
+            font-size: 1.5rem;
+            transition: all 0.4s ease;
+        }
+
+        .program-card p {
+            transition: all 0.4s ease;
+        }
+
+        /* Curriculum Section */
+        .curriculum {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .curriculum-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            background: var(--light-color);
+            border: none;
+            padding: 15px 30px;
+            margin: 0 10px 10px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .tab-btn.active {
+            background: var(--gradient);
+            color: var(--white);
+        }
+
+        .tab-btn:hover:not(.active) {
+            background: var(--accent-color);
+            color: var(--white);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .subject-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .subject-card {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border-right: 4px solid var(--primary-color);
+        }
+
+        .subject-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .subject-card h4 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .subject-card p {
+            color: var(--light-text);
+            line-height: 1.7;
+        }
+
+        /* Learning Approach */
+        .learning-approach {
+            padding: 100px 0;
+            background: linear-gradient(to bottom, #f3e5f5 0%, #f8f5f9 100%);
+        }
+
+        .approach-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 35px;
+            margin-top: 50px;
+        }
+
+        .approach-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .approach-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .approach-img {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .approach-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s ease;
+        }
+
+        .approach-card:hover .approach-img img {
+            transform: scale(1.15);
+        }
+
+        .approach-content {
+            padding: 25px;
+        }
+
+        .approach-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .approach-card p {
+            color: var(--light-text);
+            line-height: 1.7;
+        }
+
+        /* Academic Calendar */
+        .academic-calendar {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .calendar-container {
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            margin-top: 40px;
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .semester {
+            background: var(--light-color);
+            border-radius: 10px;
+            padding: 25px;
+        }
+
+        .semester h3 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-light);
+        }
+
+        .event-list {
+            list-style: none;
+        }
+
+        .event-list li {
+            padding: 12px 0;
+            border-bottom: 1px dashed #ddd;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .event-date {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        /* Footer - مطابق للصفحة الأولى */
+        footer {
+            background: var(--dark-color);
+            color: var(--white);
+            padding: 80px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--secondary-color);
+            border-radius: 2px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: var(--light-color);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary-color);
+            padding-right: 8px;
+        }
+
+        .contact-info {
+            list-style: none;
+        }
+
+        .contact-info li {
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-info i {
+            margin-left: 12px;
+            color: var(--secondary-color);
+            font-size: 1.3rem;
+        }
+
+        .social-links {
+            display: flex;
+            margin-top: 25px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            margin-left: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--secondary-color);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 1.1rem;
+        }
+
+        /* Responsive Styles - مطابقة للصفحة الأولى */
+        @media (max-width: 1200px) {
+            .container {
+                padding: 0 30px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .academics-content {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+            
+            .programs-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 90px;
+                right: -100%;
+                background: var(--white);
+                width: 280px;
+                height: calc(100vh - 90px);
+                flex-direction: column;
+                padding: 40px 20px;
+                transition: all 0.4s ease;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+                z-index: 999;
+            }
+            
+            .nav-menu.active {
+                right: 0;
+            }
+            
+            .nav-menu li {
+                margin: 15px 0;
+                width: 100%;
+                text-align: center;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-banner {
+                padding: 80px 0;
+            }
+            
+            .page-banner h2 {
+                font-size: 2.3rem;
+            }
+            
+            .academics-text h2 {
+                font-size: 1.8rem;
+            }
+            
+            .academics-text h3 {
+                font-size: 1.4rem;
+            }
+            
+            .calendar-container {
+                padding: 25px;
+            }
+            
+            .programs,
+            .academics-intro,
+            .curriculum,
+            .learning-approach,
+            .academic-calendar {
+                padding: 60px 0;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .page-banner h2 {
+                font-size: 2rem;
+            }
+            
+            .page-banner p {
+                font-size: 1.1rem;
+            }
+            
+            .logo h1 {
+                font-size: 1.5rem;
+            }
+            
+            .logo img {
+                height: 50px;
+            }
+            
+            .programs-grid,
+            .approach-grid,
+            .subject-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .calendar-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+            
+            .curriculum-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .tab-btn {
+                width: 100%;
+                margin: 5px 0;
+            }
+        }
+
+        /* Utilities */
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 50%;
+            transform: translateX(50%);
+            width: 100px;
+            height: 5px;
+            background: var(--gradient);
+            border-radius: 3px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--gradient);
+            color: var(--white);
+            padding: 14px 35px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header - مطابق للصفحة الأولى -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHJlY3QgeD0iMTAiIHk9IjEwIiB3aWR0aD0iODAiIGhlaWdodD0iODAiIGZpbGw9IiM2YTFiOWEiIGZpbGwtcnVsZT0iZXZlbm9kZCIgcng9IjEwIiByeT0iMTAiLz48cGF0aCBkPSJNMzAgMzVoNDBtLTIwIDIwaDQwbS0yMCAyMGg0MCIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjwvc3ZnPg==" alt="School Logo">
+                <h1>مدرسة دمت الأهلية</h1>
+            </div>
+            
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="about.html">عن المدرسة</a></li>
+                    <li><a href="academics.html" class="active">المناهج</a></li>
+                    <li><a href="faculty.html">المعلمات</a></li>
+                    <li><a href="admissions.html">القبول</a></li>
+                    <li><a href="contact.html">اتصل بنا</a></li>
+                </ul>
+                <div class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Banner -->
+    <section class="page-banner">
+        <div class="container">
+            <h2>المناهج الدراسية</h2>
+            <p>برامج تعليمية متطورة تواكب أحدث التطورات التربوية وتلبي احتياجات الطالبات</p>
+        </div>
+    </section>
+
+    <!-- Academics Intro -->
+    <section class="academics-intro">
+        <div class="container">
+            <div class="academics-content">
+                <div class="academics-text">
+                    <h2>نهجنا التعليمي</h2>
+                    <p>تتبنى مدرسة دمت الأهلية منهجاً تعليمياً متكاملاً يجمع بين المنهج الوطني المعزز والمناهج الدولية، بهدف إعداد طالبات متميزات قادرات على مواكبة متطلبات العصر مع الحفاظ على هويتهن العربية والإسلامية.</p>
+                    
+                    <h3>أهدافنا التعليمية</h3>
+                    <p>نسعى إلى تنمية مهارات التفكير النقدي والإبداعي لدى الطالبات، وتعزيز القيم الإسلامية، وتطوير المهارات الحياتية اللازمة للنجاح في القرن الحادي والعشرين.</p>
+                    
+                    <h3>التقويم المستمر</h3>
+                    <p>نطبق نظام التقويم المستمر الذي يراقب تقدم الطالبات أكاديمياً وسلوكياً، ويوفر تغذية راجعة مستمرة لأولياء الأمور حول أداء بناتهم.</p>
+                </div>
+                <div class="academics-image">
+                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="المنهج الدراسي">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section class="programs">
+        <div class="container">
+            <h2 class="section-title">برامجنا التعليمية</h2>
+            <div class="programs-grid">
+                <div class="program-card">
+                    <div class="program-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3>المرحلة الابتدائية</h3>
+                    <p>برنامج متكامل يركز على بناء الأساسيات في القراءة والكتابة والحساب، مع تنمية المهارات الاجتماعية والإبداعية</p>
+                </div>
+                <div class="program-card">
+                    <div class="program-icon">
+                        <i class="fas fa-pencil-alt"></i>
+                    </div>
+                    <h3>المرحلة المتوسطة</h3>
+                    <p>تطوير المهارات الأكاديمية والبحثية مع التركيز على التخصص التدريجي وتنمية الشخصية المستقلة</p>
+                </div>
+                <div class="program-card">
+                    <div class="program-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>المرحلة الثانوية</h3>
+                    <p>تحضير الطالبات للمرحلة الجامعية من خلال برامج متخصصة ومسارات تعليمية تلبي اهتماماتهن وقدراتهن</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curriculum Section -->
+    <section class="curriculum">
+        <div class="container">
+            <h2 class="section-title">المناهج الدراسية</h2>
+            
+            <div class="curriculum-tabs">
+                <button class="tab-btn active" data-tab="elementary">الابتدائية</button>
+                <button class="tab-btn" data-tab="intermediate">المتوسطة</button>
+                <button class="tab-btn" data-tab="secondary">الثانوية</button>
+            </div>
+            
+            <div class="tab-content active" id="elementary">
+                <div class="subject-grid">
+                    <div class="subject-card">
+                        <h4>اللغة العربية</h4>
+                        <p>تنمية مهارات القراءة والكتابة والتعبير، مع التركيز على الفهم والتحليل والنقد</p>
+                    </div>
+                    <div class="subject-card">
+                        <h4>الرياضيات</h4>
+                        <p>بناء أساسيات الرياضيات وتطوير التفكير المنطقي والمهارات الحسابية</p>
+                    </div>
+                    <div class="subject-card">
+                        <h4>العلوم</h4>
+                        <p>استكشاف العالم الطبيعي من خلال التجارب والملاحظة والاستكشاف</p>
+                    </div>
+                    <div class="subject-card">
+                        <h4>التربية الإسلامية</h4>
+                        <p>تعزيز القيم الإسلامية وتنمية الوعي الديني والسلوكيات الإسلامية</p>
+                    </div>
+                    <div class="subject-card">
+                        <h4>اللغة الإنجليزية</h4>
+                        <p>بناء المهارات الأساسية في الاستماع والتحدث والقراءة والكتابة</p>
+                    </div>
+                    <div class="subject-card">
+                        <h4>التربية الفنية</h4>
+                        <p>تنمية الإبداع والتعبير الفني من خلال مختلف الوسائط الفنية</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="intermediate">
+                <div class="subject-grid">
+                    <div class="subject-card">
+                        <h4>اللغة العربية</h4>
+                        <p>تعميق دراسة النصوص الأدبية وتطوير مهارات التحليل والنقد</p>
+                    </div>
+                    <div class="subject-card">
+                        <h4>الرياضيات</h4>
+                        <p>دراسة الجبر والهندسة والإحصاء وتطبيقاتها في الحياة اليومية</p>
+                    </div>
+                    <div class="subject-card">
+                        <h4>العلوم</h4>
+                        <p>دراسة الفيزياء والكيمياء والأحياء بشكل أكثر تخصصاً وعمقاً</p>
+                    </div>
+                    <div class="subject-card">
+                        <h4>الاجتماعيات</h4>
+                        <p>دراسة التاريخ والجغرافيا والتربية الوطنية والمواطنة</p>
+                    </div>
+                    <div class="subject-card">
+                        <h4>الحاسب الآلي</h4>
+                        <p>تعلم أساسيات البرمجة وتكنولوجيا المعلومات والاتصالات</p>
+                    </div>
+                    <div class="subject-card">
+                        <h4>المهارات الحياتية</h4>
+                        <p>تنمية المهارات الشخصية والاجتماعية والمهنية الأساسية</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="secondary">
+                <div class="subject-grid">
+                    <div class="subject-card">
+                        <h4>المسار العلمي</h4>
+                        <p>تخصص في الفيزياء والكيمياء والأحياء والرياضيات المتقدمة</p>
+                    </div>
+                    <div class="subject-card">
+                        <h4>المسار الأدبي</h4>
+                        <p>تخصص في اللغة العربية والعلوم الاجتماعية والفنون والآداب</p>
+                    </div>
+                    <div class="subject-card">
+                        <h4>المسار الإداري</h4>
+                        <p>تخصص في الاقتصاد والإدارة والمحاسبة وتكنولوجيا الأعمال</p>
+                    </div>
+                    <div class="subject-card">
+                        <h4>التحضير للجامعة</h4>
+                        <p>برامج إعداد للاختبارات القياسية واستكشاف التخصصات الجامعية</p>
+                    </div>
+                    <div class="subject-card">
+                        <h4>التطوير المهني</h4>
+                        <p>ورش عمل ودورات لتطوير المهارات المهنية والقيادية</p>
+                    </div>
+                    <div class="subject-card">
+                        <h4>البحث العلمي</h4>
+                        <p>تطوير مهارات البحث العلمي وإعداد المشاريع البحثية</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Approach Section -->
+    <section class="learning-approach">
+        <div class="container">
+            <h2 class="section-title">أساليبنا التعليمية</h2>
+            <div class="approach-grid">
+                <div class="approach-card">
+                    <div class="approach-img">
+                        <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="التعلم القائم على المشاريع">
+                    </div>
+                    <div class="approach-content">
+                        <h3>التعلم القائم على المشاريع</h3>
+                        <p>نطبق استراتيجية التعلم القائم على المشاريع التي تنمي مهارات حل المشكلات والعمل الجماعي</p>
+                    </div>
+                </div>
+                <div class="approach-card">
+                    <div class="approach-img">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="التعلم التعاوني">
+                    </div>
+                    <div class="approach-content">
+                        <h3>التعلم التعاوني</h3>
+                        <p>تشجيع العمل الجماعي والتعلم من الأقران لتعزيز مهارات التواصل والتعاون</p>
+                    </div>
+                </div>
+                <div class="approach-card">
+                    <div class="approach-img">
+                        <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="التعلم باللعب">
+                    </div>
+                    <div class="approach-content">
+                        <h3>التعلم باللعب</h3>
+                        <p>دمج الألعاب التعليمية والأنشطة التفاعلية لجعل عملية التعلم ممتعة وفعالة</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Academic Calendar Section -->
+    <section class="academic-calendar">
+        <div class="container">
+            <h2 class="section-title">التقويم الأكاديمي</h2>
+            <div class="calendar-container">
+                <div class="calendar-grid">
+                    <div class="semester">
+                        <h3>الفصل الدراسي الأول</h3>
+                        <ul class="event-list">
+                            <li><span class="event-date">10 سبتمبر 2023</span> <span>بداية الفصل الدراسي</span></li>
+                            <li><span class="event-date">15 أكتوبر 2023</span> <span>إجازة منتصف الفصل</span></li>
+                            <li><span class="event-date">20 نوفمبر 2023</span> <span>الاختبارات الشهرية</span></li>
+                            <li><span class="event-date">15 ديسمبر 2023</span> <span>نهاية الفصل الدراسي</span></li>
+                        </ul>
+                    </div>
+                    <div class="semester">
+                        <h3>الفصل الدراسي الثاني</h3>
+                        <ul class="event-list">
+                            <li><span class="event-date">7 يناير 2024</span> <span>بداية الفصل الدراسي</span></li>
+                            <li><span class="event-date">12 فبراير 2024</span> <span>إجازة منتصف الفصل</span></li>
+                            <li><span class="event-date">20 مارس 2024</span> <span>الاختبارات الشهرية</span></li>
+                            <li><span class="event-date">25 مايو 2024</span> <span>نهاية العام الدراسي</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer - مطابق للصفحة الأولى -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>عن المدرسة</h3>
+                    <p>مدرسة دمت الأهلية مؤسسة تعليمية رائدة تهدف إلى تقديم تعليم متميز يجمع بين الأصالة والحداثة، وتهيئة الطالبات لمواجهة متطلبات العصر بثقة وكفاءة.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>روابط سريعة</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="about.html">عن المدرسة</a></li>
+                        <li><a href="academics.html">المناهج</a></li>
+                        <li><a href="faculty.html">المعلمات</a></li>
+                        <li><a href="admissions.html">القبول والتسجيل</a></li>
+                        <li><a href="contact.html">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>مراحل التعليم</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">الروضة</a></li>
+                        <li><a href="#">المرحلة الابتدائية</a></li>
+                        <li><a href="#">المرحلة المتوسطة</a></li>
+                        <li><a href="#">المرحلة الثانوية</a></li>
+                        <li><a href="#">الأنشطة الطلابية</a></li>
+                        <li><a href="#">البرامج الخاصة</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>اتصل بنا</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> شارع الملك عبدالله، حي الروضة، دمت</li>
+                        <li><i class="fas fa-phone"></i> 0171234567</li>
+                        <li><i class="fas fa-envelope"></i> info@dammatschool.edu.sa</li>
+                        <li><i class="fas fa-clock"></i> الأحد - الخميس: 7:30 ص - 3:30 م</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>جميع الحقوق محفوظة &copy; 2023 مدرسة دمت الأهلية</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle - مطابق للصفحة الأولى
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+        
+        // Close menu when clicking outside - مطابق للصفحة الأولى
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.nav-menu') && !e.target.closest('.mobile-menu-btn')) {
+                navMenu.classList.remove('active');
+            }
+        });
+
+        // Tab functionality for curriculum section
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+        
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons and contents
+                tabBtns.forEach(b => b.classList.remove('active'));
+                tabContents.forEach(c => c.classList.remove('active'));
+                
+                // Add active class to clicked button
+                btn.classList.add('active');
+                
+                // Show corresponding content
+                const tabId = btn.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

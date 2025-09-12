@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>هيئة التدريس - مدرسة دمت الأهلية</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #6a1b9a;
+            --primary-light: #9c4dcc;
+            --primary-dark: #38006b;
+            --secondary-color: #f48fb1;
+            --accent-color: #ce93d8;
+            --light-color: #f3e5f5;
+            --dark-color: #4a148c;
+            --text-color: #333;
+            --light-text: #777;
+            --white: #fff;
+            --gradient: linear-gradient(135deg, #6a1b9a 0%, #8e24aa 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        body {
+            background-color: #f9f9f9;
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header Styles */
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 60px;
+            margin-left: 15px;
+            width: auto;
+        }
+
+        .logo h1 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-menu li {
+            margin: 0 10px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 5px 10px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-menu a.active {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        /* Page Banner */
+        .page-banner {
+            background: var(--gradient), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+
+        .page-banner .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .page-banner h2 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .page-banner p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Teaching Philosophy Section */
+        .teaching-philosophy {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .philosophy-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .philosophy-text h2 {
+            color: var(--primary-color);
+            margin-bottom: 25px;
+            font-size: 2rem;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .philosophy-text h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 80px;
+            height: 4px;
+            background: var(--gradient);
+            border-radius: 2px;
+        }
+
+        .philosophy-text h3 {
+            color: var(--dark-color);
+            margin: 30px 0 15px;
+            font-size: 1.5rem;
+        }
+
+        .philosophy-text p {
+            margin-bottom: 20px;
+            line-height: 1.9;
+            font-size: 1.1rem;
+        }
+
+        .philosophy-image {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            transition: all 0.4s ease;
+            position: relative;
+            height: 450px;
+            background: var(--light-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .philosophy-icon {
+            font-size: 8rem;
+            color: var(--primary-color);
+            opacity: 0.7;
+        }
+
+        /* Qualifications Section */
+        .qualifications {
+            padding: 80px 0;
+            background: linear-gradient(to bottom, #f8f5f9 0%, #f3e5f5 100%);
+            position: relative;
+        }
+
+        .qualifications::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 15px;
+            background: var(--gradient);
+        }
+
+        .qualifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 35px;
+            margin-top: 50px;
+        }
+
+        .qualification-card {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .qualification-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 0;
+            background: var(--gradient);
+            z-index: -1;
+            transition: all 0.5s ease;
+            opacity: 0.9;
+        }
+
+        .qualification-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            color: var(--white);
+        }
+
+        .qualification-card:hover::before {
+            height: 100%;
+        }
+
+        .qualification-card:hover h3,
+        .qualification-card:hover .qualification-icon {
+            color: var(--white);
+        }
+
+        .qualification-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 25px;
+            transition: all 0.4s ease;
+        }
+
+        .qualification-card h3 {
+            margin-bottom: 20px;
+            color: var(--dark-color);
+            font-size: 1.5rem;
+            transition: all 0.4s ease;
+        }
+
+        .qualification-card p {
+            transition: all 0.4s ease;
+        }
+
+        /* Teaching Methods Section */
+        .teaching-methods {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .methods-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .method-tab {
+            background: var(--light-color);
+            border: none;
+            padding: 15px 30px;
+            margin: 0 10px 10px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .method-tab.active {
+            background: var(--gradient);
+            color: var(--white);
+        }
+
+        .method-tab:hover:not(.active) {
+            background: var(--accent-color);
+            color: var(--white);
+        }
+
+        .method-content {
+            display: none;
+        }
+
+        .method-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .method-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .method-item {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border-right: 4px solid var(--primary-color);
+        }
+
+        .method-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .method-item h4 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .method-item p {
+            color: var(--light-text);
+            line-height: 1.7;
+        }
+
+        /* Professional Development Section */
+        .professional-dev {
+            padding: 80px 0;
+            background: linear-gradient(to bottom, #f3e5f5 0%, #f8f5f9 100%);
+        }
+
+        .dev-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 35px;
+            margin-top: 50px;
+        }
+
+        .dev-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .dev-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .dev-icon {
+            height: 120px;
+            background: var(--light-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .dev-icon i {
+            font-size: 3.5rem;
+            color: var(--primary-color);
+        }
+
+        .dev-content {
+            padding: 25px;
+        }
+
+        .dev-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .dev-card p {
+            color: var(--light-text);
+            line-height: 1.7;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-color);
+            color: var(--white);
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--secondary-color);
+            border-radius: 2px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: var(--light-color);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary-color);
+            padding-right: 8px;
+        }
+
+        .contact-info {
+            list-style: none;
+        }
+
+        .contact-info li {
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-info i {
+            margin-left: 12px;
+            color: var(--secondary-color);
+            font-size: 1.3rem;
+        }
+
+        .social-links {
+            display: flex;
+            margin-top: 25px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            margin-left: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--secondary-color);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 1.1rem;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .container {
+                padding: 0 30px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .philosophy-content {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+            
+            .qualifications-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            }
+            
+            .philosophy-image {
+                height: 350px;
+            }
+            
+            .philosophy-icon {
+                font-size: 6rem;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 90px;
+                right: -100%;
+                background: var(--white);
+                width: 280px;
+                height: calc(100vh - 90px);
+                flex-direction: column;
+                padding: 40px 20px;
+                transition: all 0.4s ease;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+                z-index: 999;
+            }
+            
+            .nav-menu.active {
+                right: 0;
+            }
+            
+            .nav-menu li {
+                margin: 15px 0;
+                width: 100%;
+                text-align: center;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-banner {
+                padding: 80px 0;
+            }
+            
+            .page-banner h2 {
+                font-size: 2.3rem;
+            }
+            
+            .philosophy-text h2 {
+                font-size: 1.8rem;
+            }
+            
+            .philosophy-text h3 {
+                font-size: 1.4rem;
+            }
+            
+            .method-tab {
+                padding: 12px 25px;
+                font-size: 1rem;
+            }
+            
+            .teaching-philosophy,
+            .qualifications,
+            .teaching-methods,
+            .professional-dev {
+                padding: 60px 0;
+            }
+            
+            .footer-grid {
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .page-banner h2 {
+                font-size: 2rem;
+            }
+            
+            .page-banner p {
+                font-size: 1.1rem;
+            }
+            
+            .logo h1 {
+                font-size: 1.5rem;
+            }
+            
+            .logo img {
+                height: 50px;
+            }
+            
+            .qualifications-grid,
+            .method-list,
+            .dev-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+            
+            .philosophy-image {
+                height: 250px;
+            }
+            
+            .philosophy-icon {
+                font-size: 4rem;
+            }
+            
+            .qualification-card {
+                padding: 30px 20px;
+            }
+            
+            .method-tab {
+                width: 100%;
+                margin: 5px 0;
+            }
+            
+            .methods-tabs {
+                flex-direction: column;
+            }
+        }
+
+        /* Utilities */
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 50%;
+            transform: translateX(50%);
+            width: 100px;
+            height: 5px;
+            background: var(--gradient);
+            border-radius: 3px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--gradient);
+            color: var(--white);
+            padding: 14px 35px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHJlY3QgeD0iMTAiIHk9IjEwIiB3aWR0aD0iODAiIGhlaWdodD0iODAiIGZpbGw9IiM2YTFiOWEiIGZpbGwtcnVsZT0iZXZlbm9kZCIgcng9IjEwIiByeT0iMTAiLz48cGF0aCBkPSJNMzAgMzVoNDBtLTIwIDIwaDQwbS0yMCAyMGg0MCIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjwvc3ZnPg==" alt="School Logo">
+                <h1>مدرسة دمت الأهلية</h1>
+            </div>
+            
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="about.html">عن المدرسة</a></li>
+                    <li><a href="academics.html">المناهج</a></li>
+                    <li><a href="faculty.html" class="active">المعلمات</a></li>
+                    <li><a href="admissions.html">القبول</a></li>
+                    <li><a href="contact.html">اتصل بنا</a></li>
+                </ul>
+                <div class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Banner -->
+    <section class="page-banner">
+        <div class="container">
+            <h2>هيئة التدريس</h2>
+            <p>معلمات متميزات يقدمن أفضل ما لديهن لتعليم وتطوير طالباتنا</p>
+        </div>
+    </section>
+
+    <!-- Teaching Philosophy Section -->
+    <section class="teaching-philosophy">
+        <div class="container">
+            <div class="philosophy-content">
+                <div class="philosophy-text">
+                    <h2>فلسفتنا التعليمية</h2>
+                    <p>تؤمن مدرسة دمت الأهلية بأن المعلمة هي حجر الأساس في العملية التعليمية، وهي المحرك الرئيسي لإلهام الطالبات وتنمية قدراتهن. لذلك نحرص على اختيار معلمات متميزات يحملن شهادات علمية متقدمة ويتمتعن بخبرات تربوية واسعة.</p>
+                    
+                    <h3>رسالة معلماتنا</h3>
+                    <p>تسعى معلماتنا إلى بناء جيل من الطالبات الواثقات بأنفسهن، القادرات على التفكير النقدي، المتمسكات بقيمهن وهويتهن العربية والإسلامية، والمستعدات لمواجهة تحديات المستقبل.</p>
+                    
+                    <h3>نهجنا في التدريس</h3>
+                    <p>تعتمد معلماتنا على أحدث الأساليب التربوية في التدريس، مع التركيز على التعلم النشط والتعلم التعاوني، وربط المنهج الدراسي بالحياة الواقعية لضمان استفادة قصوى للطالبات.</p>
+                </div>
+                <div class="philosophy-image">
+                    <div class="philosophy-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Qualifications Section -->
+    <section class="qualifications">
+        <div class="container">
+            <h2 class="section-title">مؤهلات معلماتنا</h2>
+            <div class="qualifications-grid">
+                <div class="qualification-card">
+                    <div class="qualification-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>المؤهلات العلمية</h3>
+                    <p>جميع معلماتنا حاصلات على شهادات جامعية في التخصصات المختلفة، مع وجود نسبة كبيرة من الحاصلات على شهادات الماجستير والدكتوراه في التخصصات التربوية.</p>
+                </div>
+                <div class="qualification-card">
+                    <div class="qualification-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>الشهادات المهنية</h3>
+                    <p>تحمل معلماتنا شهادات مهنية متخصصة في طرق التدريس الحديثة، واستراتيجيات التعلم النشط، وتكنولوجيا التعليم، والتربية الخاصة.</p>
+                </div>
+                <div class="qualification-card">
+                    <div class="qualification-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>الخبرات الدولية</h3>
+                    <p>تمتلك نسبة كبيرة من معلماتنا خبرات تدريسية دولية، حيث شاركن في برامج تبادل تربوية مع مدارس مرموقة في مختلف أنحاء العالم.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Teaching Methods Section -->
+    <section class="teaching-methods">
+        <div class="container">
+            <h2 class="section-title">أساليبنا التدريسية</h2>
+            
+            <div class="methods-tabs">
+                <button class="method-tab active" data-method="active">التعلم النشط</button>
+                <button class="method-tab" data-method="differentiation">التعليم المتمايز</button>
+                <button class="method-tab" data-method="technology">دمج التكنولوجيا</button>
+            </div>
+            
+            <div class="method-content active" id="active">
+                <ul class="method-list">
+                    <li class="method-item">
+                        <h4>التعلم القائم على المشاريع</h4>
+                        <p>تنفيذ مشاريع تعليمية تطبيقية تربط بين النظرية والتطبيق العملي</p>
+                    </li>
+                    <li class="method-item">
+                        <h4>التعلم التعاوني</h4>
+                        <p>تنظيم العمل في مجموعات لتعزيز مهارات التواصل والعمل الجماعي</p>
+                    </li>
+                    <li class="method-item">
+                        <h4>التعلم باللعب</h4>
+                        <p>استخدام الألعاب التعليمية لتعزيز engagement والفهم</p>
+                    </li>
+                    <li class="method-item">
+                        <h4>المناقشات الصفية</h4>
+                        <p>تشجيع الحوار والمناقشة لتنمية مهارات التفكير النقدي</p>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="method-content" id="differentiation">
+                <ul class="method-list">
+                    <li class="method-item">
+                        <h4>مراعاة الفروق الفردية</h4>
+                        <p>تخطيط الدروس لتناسب مختلف أنماط التعلم والقدرات</p>
+                    </li>
+                    <li class="method-item">
+                        <h4>مهام متعددة المستويات</h4>
+                        <p>توفير أنشطة تعليمية بمستويات صعوبة مختلفة</p>
+                    </li>
+                    <li class="method-item">
+                        <h4>خيارات متعددة للتعبير</h4>
+                        <p>إتاحة فرص متنوعة للطالبات لإظهار تعلمهن</p>
+                    </li>
+                    <li class="method-item">
+                        <h4>دعم إضافي</h4>
+                        <p>توفير جلسات دعم فردية للطالبات اللاتي يحتجن مساعدة إضافية</p>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="method-content" id="technology">
+                <ul class="method-list">
+                    <li class="method-item">
+                        <h4>الفصول الذكية</h4>
+                        <p>استخدام السبورات التفاعلية والتقنيات الحديثة في التدريس</p>
+                    </li>
+                    <li class="method-item">
+                        <h4>منصات التعلم الإلكتروني</h4>
+                        <p>توظيف منصات التعلم عن بعد لإثراء العملية التعليمية</p>
+                    </li>
+                    <li class="method-item">
+                        <h4>التطبيقات التعليمية</h4>
+                        <p>استخدام تطبيقات تعليمية تفاعلية لجعل التعلم أكثر متعة</p>
+                    </li>
+                    <li class="method-item">
+                        <h4>المحتوى الرقمي</h4>
+                        <p>إنشاء محتوى تعليمي رقمي يلائم احتياجات الطالبات</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Development Section -->
+    <section class="professional-dev">
+        <div class="container">
+            <h2 class="section-title">التطور المهني</h2>
+            <div class="dev-grid">
+                <div class="dev-card">
+                    <div class="dev-icon">
+                        <i class="fas fa-chalkboard"></i>
+                    </div>
+                    <div class="dev-content">
+                        <h3>ورش العمل</h3>
+                        <p>تنظيم ورش عمل أسبوعية داخل المدرسة لتطوير المهارات التدريسية وتبادل الخبرات بين المعلمات</p>
+                    </div>
+                </div>
+                <div class="dev-card">
+                    <div class="dev-icon">
+                        <i class="fas fa-book-reader"></i>
+                    </div>
+                    <div class="dev-content">
+                        <h3>المؤتمرات التربوية</h3>
+                        <p>مشاركة معلماتنا في مؤتمرات وندوات محلية ودولية للاطلاع على أحدث التطورات في مجال التعليم</p>
+                    </div>
+                </div>
+                <div class="dev-card">
+                    <div class="dev-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="dev-content">
+                        <h3>برامج التدريب</h3>
+                        <p>إلحاق المعلمات ببرامج تدريبية متخصصة في مجالات مثل STEAM والتعلم القائم على المشاريع</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>عن المدرسة</h3>
+                    <p>مدرسة دمت الأهلية هي مدرسة خاصة للبنات تأسست عام 2005 بهدف تقديم تعليم متميز يجمع بين الأصالة والحداثة.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>روابط سريعة</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="about.html">عن المدرسة</a></li>
+                        <li><a href="academics.html">المناهج</a></li>
+                        <li><a href="faculty.html">المعلمات</a></li>
+                        <li><a href="admissions.html">القبول</a></li>
+                        <li><a href="contact.html">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>اتصل بنا</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> شارع الملك عبدالله، الرياض، السعودية</li>
+                        <li><i class="fas fa-phone"></i> 0096612345678</li>
+                        <li><i class="fas fa-envelope"></i> info@damet-school.edu.sa</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>جميع الحقوق محفوظة © 2023 مدرسة دمت الأهلية</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.nav-menu') && !e.target.closest('.mobile-menu-btn')) {
+                navMenu.classList.remove('active');
+            }
+        });
+
+        // Teaching Methods Tabs
+        const methodTabs = document.querySelectorAll('.method-tab');
+        const methodContents = document.querySelectorAll('.method-content');
+        
+        methodTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs and contents
+                methodTabs.forEach(t => t.classList.remove('active'));
+                methodContents.forEach(c => c.classList.remove('active'));
+                
+                // Add active class to clicked tab
+                tab.classList.add('active');
+                
+                // Show corresponding content
+                const methodId = tab.getAttribute('data-method');
+                document.getElementById(methodId).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

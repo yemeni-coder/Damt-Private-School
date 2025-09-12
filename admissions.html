@@ -1,0 +1,1449 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>القبول والتسجيل - مدرسة دمت الأهلية</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        :root {
+            --primary-color: #6a1b9a;
+            --primary-light: #9c4dcc;
+            --primary-dark: #38006b;
+            --secondary-color: #f48fb1;
+            --accent-color: #ce93d8;
+            --light-color: #f3e5f5;
+            --dark-color: #4a148c;
+            --text-color: #333;
+            --light-text: #777;
+            --white: #fff;
+            --gradient: linear-gradient(135deg, #6a1b9a 0%, #8e24aa 100%);
+            --success-color: #4caf50;
+            --warning-color: #ff9800;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        body {
+            background-color: #f9f9f9;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header Styles */
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 60px;
+            margin-left: 15px;
+        }
+
+        .logo h1 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-menu li {
+            margin: 0 10px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 5px 10px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-menu a.active {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        /* Page Banner */
+        .page-banner {
+            background: var(--gradient), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--white);
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+
+        .page-banner .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .page-banner h2 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .page-banner p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Admissions Intro */
+        .admissions-intro {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .intro-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .intro-text h2 {
+            color: var(--primary-color);
+            margin-bottom: 25px;
+            font-size: 2rem;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .intro-text h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 80px;
+            height: 4px;
+            background: var(--gradient);
+            border-radius: 2px;
+        }
+
+        .intro-text p {
+            margin-bottom: 20px;
+            line-height: 1.9;
+            font-size: 1.1rem;
+        }
+
+        .intro-image {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            position: relative;
+            height: 400px;
+            background: var(--light-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .intro-icon {
+            font-size: 8rem;
+            color: var(--primary-color);
+            opacity: 0.7;
+        }
+
+        /* Admission Process */
+        .admission-process {
+            padding: 100px 0;
+            background: linear-gradient(to bottom, #f8f5f9 0%, #f3e5f5 100%);
+            position: relative;
+        }
+
+        .admission-process::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 15px;
+            background: var(--gradient);
+        }
+
+        .process-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            margin-top: 50px;
+            position: relative;
+        }
+
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 50px;
+            height: 100%;
+            width: 4px;
+            background: var(--primary-light);
+            transform: translateX(50%);
+        }
+
+        .process-step {
+            display: flex;
+            align-items: flex-start;
+            gap: 30px;
+            position: relative;
+        }
+
+        .step-number {
+            background: var(--gradient);
+            color: var(--white);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            flex-shrink: 0;
+            z-index: 2;
+        }
+
+        .step-content {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            flex: 1;
+        }
+
+        .step-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .step-content p {
+            color: var(--light-text);
+            line-height: 1.7;
+        }
+
+        /* Requirements Section */
+        .requirements {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .requirements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 35px;
+            margin-top: 50px;
+        }
+
+        .requirement-card {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            border-top: 5px solid var(--primary-color);
+        }
+
+        .requirement-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .requirement-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 25px;
+            transition: all 0.4s ease;
+        }
+
+        .requirement-card h3 {
+            margin-bottom: 20px;
+            color: var(--dark-color);
+            font-size: 1.5rem;
+        }
+
+        .requirement-card ul {
+            list-style: none;
+            text-align: right;
+        }
+
+        .requirement-card li {
+            margin-bottom: 10px;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        .requirement-card li::before {
+            content: "•";
+            color: var(--primary-color);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: 10px;
+        }
+
+        /* Fees Section */
+        .fees-section {
+            padding: 100px 0;
+            background: linear-gradient(to bottom, #f3e5f5 0%, #f8f5f9 100%);
+        }
+
+        .fees-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 40px 0;
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        .fees-table th, .fees-table td {
+            padding: 20px;
+            text-align: right;
+            border-bottom: 1px solid #eee;
+        }
+
+        .fees-table th {
+            background-color: var(--primary-color);
+            color: var(--white);
+            font-weight: 600;
+        }
+
+        .fees-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .fees-table tr:hover {
+            background-color: #f9f5fc;
+        }
+
+        .discount-badge {
+            background: var(--success-color);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-right: 10px;
+        }
+
+        /* Application Form */
+        .application-form {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .form-container {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 50px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-top: 40px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(106, 27, 154, 0.1);
+            outline: none;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--gradient);
+            color: var(--white);
+            padding: 14px 35px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-block {
+            display: block;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 100px 0;
+            background: linear-gradient(to bottom, #f8f5f9 0%, #f3e5f5 100%);
+        }
+
+        .faq-container {
+            margin-top: 50px;
+        }
+
+        .faq-item {
+            background: var(--white);
+            border-radius: 10px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .faq-question i {
+            transition: all 0.3s ease;
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 20px;
+            max-height: 500px;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-color);
+            color: var(--white);
+            padding: 80px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--secondary-color);
+            border-radius: 2px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: var(--light-color);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary-color);
+            padding-right: 8px;
+        }
+
+        .contact-info {
+            list-style: none;
+        }
+
+        .contact-info li {
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-info i {
+            margin-left: 12px;
+            color: var(--secondary-color);
+            font-size: 1.3rem;
+        }
+
+        .social-links {
+            display: flex;
+            margin-top: 25px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            margin-left: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--secondary-color);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 1.1rem;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .intro-content {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+            
+            .process-steps::before {
+                right: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-banner {
+                padding: 80px 0;
+            }
+            
+            .page-banner h2 {
+                font-size: 2.3rem;
+            }
+            
+            .intro-text h2 {
+                font-size: 1.8rem;
+            }
+            
+            .intro-icon {
+                font-size: 5rem;
+            }
+            
+            .process-steps::before {
+                display: none;
+            }
+            
+            .process-step {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .form-container {
+                padding: 30px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .page-banner h2 {
+                font-size: 2rem;
+            }
+            
+            .page-banner p {
+                font-size: 1.1rem;
+            }
+            
+            .requirements-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+            
+            .fees-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+
+        /* Utilities */
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 50%;
+            transform: translateX(50%);
+            width: 100px;
+            height: 5px;
+            background: var(--gradient);
+            border-radius: 3px;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .container {
+                padding: 0 30px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .philosophy-content {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+            
+            .qualifications-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            }
+            
+            .philosophy-image {
+                height: 350px;
+            }
+            
+            .philosophy-icon {
+                font-size: 6rem;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 90px;
+                right: -100%;
+                background: var(--white);
+                width: 280px;
+                height: calc(100vh - 90px);
+                flex-direction: column;
+                padding: 40px 20px;
+                transition: all 0.4s ease;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+                z-index: 999;
+            }
+            
+            .nav-menu.active {
+                right: 0;
+            }
+            
+            .nav-menu li {
+                margin: 15px 0;
+                width: 100%;
+                text-align: center;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-banner {
+                padding: 80px 0;
+            }
+            
+            .page-banner h2 {
+                font-size: 2.3rem;
+            }
+            
+            .philosophy-text h2 {
+                font-size: 1.8rem;
+            }
+            
+            .philosophy-text h3 {
+                font-size: 1.4rem;
+            }
+            
+            .method-tab {
+                padding: 12px 25px;
+                font-size: 1rem;
+            }
+            
+            .teaching-philosophy,
+            .qualifications,
+            .teaching-methods,
+            .professional-dev {
+                padding: 60px 0;
+            }
+            
+            .footer-grid {
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .page-banner h2 {
+                font-size: 2rem;
+            }
+            
+            .page-banner p {
+                font-size: 1.1rem;
+            }
+            
+            .logo h1 {
+                font-size: 1.5rem;
+            }
+            
+            .logo img {
+                height: 50px;
+            }
+            
+            .qualifications-grid,
+            .method-list,
+            .dev-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+            
+            .philosophy-image {
+                height: 250px;
+            }
+            
+            .philosophy-icon {
+                font-size: 4rem;
+            }
+            
+            .qualification-card {
+                padding: 30px 20px;
+            }
+            
+            .method-tab {
+                width: 100%;
+                margin: 5px 0;
+            }
+            
+            .methods-tabs {
+                flex-direction: column;
+            }
+        }
+
+        /* أنماط CSS السابقة تبقى كما هي */
+        /* ... (جميع أنماط CSS السابقة) ... */
+        
+        /* إضافة أنماط للتنقل السلس */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* تحسينات للشريط التقدمي */
+        .progress-container {
+            width: 100%;
+            height: 5px;
+            background: #ccc;
+            position: fixed;
+            top: 0;
+            right: 0;
+            z-index: 1001;
+        }
+        
+        .progress-bar {
+            height: 5px;
+            background: var(--gradient);
+            width: 0%;
+        }
+        
+        /* تحسينات للزر العائم */
+        .floating-button {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--gradient);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .floating-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+        }
+        
+        /* تحسينات للتنقل بين الأقسام */
+        .section-nav {
+            position: sticky;
+            top: 80px;
+            background: white;
+            padding: 15px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            z-index: 999;
+            margin-bottom: 30px;
+        }
+        
+        .section-nav-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .section-nav a {
+            text-decoration: none;
+            color: var(--text-color);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .section-nav a:hover,
+        .section-nav a.active {
+            background: var(--gradient);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- شريط التقدم -->
+    <div class="progress-container">
+        <div class="progress-bar" id="myProgressBar"></div>
+    </div>
+    
+    <!-- زر العودة للأعلى -->
+    <div class="floating-button" id="scrollToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHJlY3QgeD0iMTAiIHk9IjEwIiB3aWR0aD0iODAiIGhlaWdodD0iODAiIGZpbGw9IiM2YTFiOWEiIGZpbGwtcnVsZT0iZXZlbm9kZCIgcng9IjEwIiByeT0iMTAiLz48cGF0aCBkPSJNMzAgMzVoNDBtLTIwIDIwaDQwbS0yMCAyMGg0MCIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjwvc3ZnPg==" alt="School Logo">
+                <h1>مدرسة دمت الأهلية</h1>
+            </div>
+            
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="about.html">عن المدرسة</a></li>
+                    <li><a href="academics.html">المناهج</a></li>
+                    <li><a href="faculty.html">المعلمات</a></li>
+                    <li><a href="admissions.html" class="active">القبول</a></li>
+                    <li><a href="contact.html">اتصل بنا</a></li>
+                </ul>
+                <div class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Banner -->
+    <section class="page-banner">
+        <div class="container">
+            <h2>القبول والتسجيل</h2>
+            <p>انضمي إلى عائلة مدرسة دمت الأهلية وابدئي رحلة تعليمية استثنائية</p>
+        </div>
+    </section>
+
+    <!-- شريط التنقل بين الأقسام -->
+    <div class="section-nav">
+        <div class="container section-nav-container">
+            <a href="#admissions-intro">مقدمة</a>
+            <a href="#admission-process">خطوات التقديم</a>
+            <a href="#requirements">متطلبات القبول</a>
+            <a href="#fees">الرسوم الدراسية</a>
+            <a href="#application-form">تقديم الطلب</a>
+            <a href="#faq">أسئلة شائعة</a>
+        </div>
+    </div>
+
+    <!-- Admissions Intro -->
+    <section id="admissions-intro" class="admissions-intro">
+        <div class="container">
+            <div class="intro-content">
+                <div class="intro-text">
+                    <h2>مرحباً بكم في عملية القبول</h2>
+                    <p>نحن سعداء لاهتمامكم بمدرسة دمت الأهلية. نسعى لتوفير تجربة قبول ميسرة وشفافة تساعدكم على اتخاذ القرار الأنسب لمستقبل ابنتكم التعليمي.</p>
+                    <p>تفتح المدرسة باب التسجيل للعام الدراسي الجديد في الفترة من 1 فبراير إلى 30 أبريل من كل عام. نرحب بالطالبات من جميع الصفوف من الروضة إلى الصف الثاني عشر.</p>
+                    <p>لضمان جودة التعليم وتقديم الاهتمام الفردي لكل طالبة، فإن عدد المقاعد محدود، لذا ننصح بالتقديم المبكر.</p>
+                </div>
+                <div class="intro-image">
+                    <div class="intro-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admission Process -->
+    <section id="admission-process" class="admission-process">
+        <div class="container">
+            <h2 class="section-title">خطوات التقديم</h2>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>التقديم الإلكتروني</h3>
+                        <p>املئي نموذج الطلب الإلكتروني عبر موقع المدرسة مع إرفاق المستندات المطلوبة. سيصلك بريد إلكتروني يؤكد استلام الطلب خلال 48 ساعة.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>مراجعة الطلب</h3>
+                        <p>تقوم لجنة القبول بمراجعة الطلب والمستندات المقدمة. في حالة اكتمال المتطلبات، سيتم التواصل معكم لتحديد موعد المقابلة.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>المقابلة الشخصية</h3>
+                        <p>سيتم دعوة الطالبة وولي الأمر لمقابلة شخصية مع إدارة المدرسة. تهدف هذه المقابلة إلى التعرف على الطالبة وتوقعات الأسرة من التعليم.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>اختبار القبول</h3>
+                        <p>تُجرى اختبارات تقييمية للطالبات المتقدمات للصفوف من الثالث الابتدائي فما فوق، لقياس المستوى الأكاديمي في المواد الأساسية.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3>قرار القبول</h3>
+                        <p>يتم إبلاغ أولياء الأمور بقرار القبول خلال أسبوعين من إكمال جميع مراحل التقديم. في حالة القبول، يجب完成 التسجيل خلال أسبوع.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Requirements Section -->
+    <section id="requirements" class="requirements">
+        <div class="container">
+            <h2 class="section-title">متطلبات القبول</h2>
+            <div class="requirements-grid">
+                <div class="requirement-card">
+                    <div class="requirement-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>المستندات المطلوبة</h3>
+                    <ul>
+                        <li>صورة من شهادة الميلاد</li>
+                        <li>صورة من بطاقة العائلة</li>
+                        <li>صور شخصية حديثة (4 صور)</li>
+                        <li>كشف الدرجات من المدرسة السابقة</li>
+                        <li>شهادة نقل للطالبات المنقولات</li>
+                        <li>سجل التطعيمات</li>
+                    </ul>
+                </div>
+                <div class="requirement-card">
+                    <div class="requirement-icon">
+                        <i class="fas fa-user-check"></i>
+                    </div>
+                    <h3>شروط القبول</h3>
+                    <ul>
+                        <li>أن تكون الطالبة ذات سيرة وسلوك حسن</li>
+                        <li>استكمال المتطلبات العمرية للصف المتقدم له</li>
+                        <li>اجتياز اختبار القبول والمقابلة الشخصية</li>
+                        <li>التزام ولي الأمر برسوم التسجيل والشروط المالية</li>
+                        <li>الالتزام بزي المدرسة الموحد بعد القبول</li>
+                    </ul>
+                </div>
+                <div class="requirement-card">
+                    <div class="requirement-icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                    <h3>معلومات إضافية</h3>
+                    <ul>
+                        <li>الأولوية في القبول لأخوات الطالبات المسجلات</li>
+                        <li>يتم النظر في طلبات المنح الدراسية بشكل منفصل</li>
+                        <li>لطالبات الصف الأول: يجب أن تكون الطالبة قد أتمت 6 سنوات</li>
+                        <li>يقبل الطلبات على مدار العام في حالة وجود مقاعد شاغرة</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fees Section -->
+    <section id="fees" class="fees-section">
+        <div class="container">
+            <h2 class="section-title">الرسوم الدراسية</h2>
+            <table class="fees-table">
+                <thead>
+                    <tr>
+                        <th>المرحلة الدراسية</th>
+                        <th>الرسوم السنوية</th>
+                        <th>الرسوم المشمولة</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>الروضة</td>
+                        <td>18,000 ر.س</td>
+                        <td>الكتب، الزي المدرسي، الأنشطة</td>
+                    </tr>
+                    <tr>
+                        <td>الابتدائي</td>
+                        <td>22,000 ر.س</td>
+                        <td>الكتب، الزي المدرسي، المعامل</td>
+                    </tr>
+                    <tr>
+                        <td>المتوسط</td>
+                        <td>25,000 ر.س</td>
+                        <td>الكتب، الزي، المعامل، الرحلات</td>
+                    </tr>
+                    <tr>
+                        <td>الثانوي</td>
+                        <td>28,000 ر.س</td>
+                        <td>الكتب، الزي، المعامل، التوجيه الجامعي</td>
+                    </tr>
+                    <tr>
+                        <td>خصم الأخوات</td>
+                        <td><span class="discount-badge">10% خصم</span> للشقيقة الثانية</td>
+                        <td><span class="discount-badge">15% خصم</span> بدءاً من الشقيقة الثالثة</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p style="text-align: center; margin-top: 20px; font-style: italic;">
+                للاستفسار عن برامج المنح الدراسية، يرجى التواصل مع مكتب القبول
+            </p>
+        </div>
+    </section>
+
+    <!-- Application Form -->
+    <section id="application-form" class="application-form">
+        <div class="container">
+            <h2 class="section-title">تقديم طلب الالتحاق</h2>
+            <div class="form-container">
+                <form id="admissionForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="studentName">اسم الطالبة الثلاثي *</label>
+                            <input type="text" id="studentName" name="studentName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="birthDate">تاريخ الميلاد *</label>
+                            <input type="date" id="birthDate" name="birthDate" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="grade">الصف المتقدم له *</label>
+                            <select id="grade" name="grade" required>
+                                <option value="">اختر الصف</option>
+                                <option value="kg1">روضة أولى</option>
+                                <option value="kg2">روضة ثانية</option>
+                                <option value="g1">الصف الأول الابتدائي</option>
+                                <option value="g2">الصف الثاني الابتدائي</option>
+                                <option value="g3">الصف الثالث الابتدائي</option>
+                                <option value="g4">الصف الرابع الابتدائي</option>
+                                <option value="g5">الصف الخامس الابتدائي</option>
+                                <option value="g6">الصف السادس الابتدائي</option>
+                                <option value="g7">الصف الأول المتوسط</option>
+                                <option value="g8">الصف الثاني المتوسط</option>
+                                <option value="g9">الصف الثالث المتوسط</option>
+                                <option value="g10">الصف الأول الثانوي</option>
+                                <option value="g11">الصف الثاني الثانوي</option>
+                                <option value="g12">الصف الثالث الثانوي</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="currentSchool">المدرسة الحالية/السابقة</label>
+                            <input type="text" id="currentSchool" name="currentSchool">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fatherName">اسم الأب الثلاثي *</label>
+                            <input type="text" id="fatherName" name="fatherName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="motherName">اسم الأم الثلاثي *</label>
+                            <input type="text" id="motherName" name="motherName" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">رقم الجوال *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">البريد الإلكتروني *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">ملاحظات إضافية (اختياري)</label>
+                        <textarea id="message" name="message" rows="4"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-block">إرسال الطلب</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq-section">
+        <div class="container">
+            <h2 class="section-title">أسئلة شائعة</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        ما هو موعد التسجيل للعام الدراسي القادم؟
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>يبدأ التسجيل للعام الدراسي الجديد في 1 فبراير وينتهي في 30 أبريل من كل عام. ومع ذلك، يمكن تقديم الطلبات على مدار العام في حالة وجود مقاعد شاغرة.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        هل تقدم المدرسة منحاً دراسية؟
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>نعم، تقدم المدرسة عدداً محدوداً من المنح الدراسية للطالبات المتميزات أكاديمياً أو في المجالات الرياضية والفنية. يتم تقييم طلبات المنح بشكل منفصل، ويمكنكم التواصل مع مكتب القبول للحصول على مزيد من المعلومات.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        ما هي سعة الفصل الدراسي؟
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>تحرص المدرسة على تقديم تعليم متميز، لذلك لا تتجاوز سعة الفصل الدراسي 20 طالبة في الصفوف الأولى، و25 طالبة في الصفوف المتوسطة والثانوية.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        هل توجد مواصلات مدرسية؟
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>نعم، تقدم المدرسة خدمة المواصلات لتغطية معظم أحياء المدينة. يتم تحديد الرسوم حسب مسافة السكن من المدرسة، ويمكنكم الاستفسار عن التفاصيل من مكتب الخدمات.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        ما هي ساعات الدوام المدرسي؟
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>يبدأ الدوام المدرسي من الساعة 7:30 صباحاً حتى الساعة 2:30 ظهراً من الأحد إلى الخميس. تختلف أوقات الانصراف قليلاً بين المراحل الدراسية، وسيتم إبلاغكم بالتفاصيل عند التسجيل.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        هل توجد أنشطة لا صفية؟
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>نعم، تقدم المدرسة مجموعة متنوعة من الأنشطة اللاصفية تشمل الرياضة، الفنون، المسرح، العلوم، والبرامج الثقافية. تهدف هذه الأنشطة إلى تنمية مواهب الطالبات وصقل شخصياتهن.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>عن المدرسة</h3>
+                    <p>مدرسة دمت الأهلية مؤسسة تعليمية رائدة تهدف إلى تقديم تعليم متميز يجمع بين الأصالة والحداثة، وتهيئة الطالبات لمواجهة متطلبات العصر بثقة وكفاءة.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>روابط سريعة</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="about.html">عن المدرسة</a></li>
+                        <li><a href="academics.html">المناهج</a></li>
+                        <li><a href="faculty.html">المعلمات</a></li>
+                        <li><a href="admissions.html">القبول والتسجيل</a></li>
+                        <li><a href="contact.html">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>مراحل التعليم</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">الروضة</a></li>
+                        <li><a href="#">المرحلة الابتدائية</a></li>
+                        <li><a href="#">المرحلة المتوسطة</a></li>
+                        <li><a href="#">المرحلة الثانوية</a></li>
+                        <li><a href="#">الأنشطة الطلابية</a></li>
+                        <li><a href="#">البرامج الخاصة</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>اتصل بنا</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> شارع الملك عبدالله، حي الروضة، دمت</li>
+                        <li><i class="fas fa-phone"></i> 0171234567</li>
+                        <li><i class="fas fa-envelope"></i> info@dammatschool.edu.sa</li>
+                        <li><i class="fas fa-clock"></i> الأحد - الخميس: 7:30 ص - 2:30 م</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>جميع الحقوق محفوظة &copy; 2023 مدرسة دمت الأهلية</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // تفعيل الأسئلة الشائعة
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+
+        // شريط التقدم
+        window.onscroll = function() {updateProgressBar()};
+        
+        function updateProgressBar() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById("myProgressBar").style.width = scrolled + "%";
+        }
+
+        // زر العودة للأعلى
+        document.getElementById('scrollToTop').addEventListener('click', () => {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+
+        // إظهار/إخفاء زر العودة للأعلى
+        window.addEventListener('scroll', function() {
+            const scrollButton = document.getElementById('scrollToTop');
+            if (window.pageYOffset > 300) {
+                scrollButton.style.display = 'flex';
+            } else {
+                scrollButton.style.display = 'none';
+            }
+        });
+
+        // تفعيل التنقل السلس
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // تفعيل إرسال النموذج
+        document.getElementById('admissionForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('تم استلام طلبكم بنجاح، سنتواصل معكم قريباً. شكراً لكم!');
+            this.reset();
+        });
+
+        // تفعيل التنقل في شريط الأقسام
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.section-nav a');
+        
+        window.addEventListener('scroll', function() {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (pageYOffset >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.nav-menu') && !e.target.closest('.mobile-menu-btn')) {
+                navMenu.classList.remove('active');
+            }
+        });
+    
+    </script>
+</body>
+</html>
