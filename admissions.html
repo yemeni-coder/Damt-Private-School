@@ -6,10 +6,7 @@
     <title>القبول والتسجيل - مدرسة دمت الأهلية</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="style.css">
-
     <style>
-
         :root {
             --primary-color: #6a1b9a;
             --primary-light: #9c4dcc;
@@ -24,6 +21,7 @@
             --gradient: linear-gradient(135deg, #6a1b9a 0%, #8e24aa 100%);
             --success-color: #4caf50;
             --warning-color: #ff9800;
+            --offer-color: #e91e63;
         }
 
         * {
@@ -207,6 +205,93 @@
             font-size: 8rem;
             color: var(--primary-color);
             opacity: 0.7;
+        }
+
+        /* Special Offers Section */
+        .special-offers {
+            padding: 100px 0;
+            background: linear-gradient(to bottom, #f3e5f5 0%, #f8f5f9 100%);
+        }
+
+        .offers-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .offer-card {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            border-top: 5px solid var(--offer-color);
+        }
+
+        .offer-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .offer-badge {
+            position: absolute;
+            top: 20px;
+            left: -35px;
+            background: var(--offer-color);
+            color: white;
+            padding: 5px 40px;
+            font-size: 1rem;
+            transform: rotate(-45deg);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .offer-icon {
+            font-size: 3rem;
+            color: var(--offer-color);
+            margin-bottom: 20px;
+        }
+
+        .offer-card h3 {
+            color: var(--dark-color);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .offer-card p {
+            color: var(--light-text);
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .offer-features {
+            list-style: none;
+            text-align: right;
+            margin-top: 20px;
+        }
+
+        .offer-features li {
+            margin-bottom: 10px;
+            padding: 8px 0;
+            position: relative;
+            border-bottom: 1px dashed #eee;
+        }
+
+        .offer-features li:last-child {
+            border-bottom: none;
+        }
+
+        .offer-features li::before {
+            content: "✓";
+            color: var(--success-color);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: 10px;
         }
 
         /* Admission Process */
@@ -626,6 +711,10 @@
             .process-steps::before {
                 right: 30px;
             }
+            
+            .offers-container {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 768px) {
@@ -657,6 +746,10 @@
             .form-container {
                 padding: 30px;
             }
+            
+            .offer-card {
+                padding: 20px;
+            }
         }
 
         @media (max-width: 576px) {
@@ -680,6 +773,11 @@
             .fees-table {
                 display: block;
                 overflow-x: auto;
+            }
+            
+            .section-nav-container {
+                flex-direction: column;
+                gap: 10px;
             }
         }
 
@@ -797,6 +895,10 @@
             .footer-grid {
                 gap: 30px;
             }
+            
+            .special-offers {
+                padding: 60px 0;
+            }
         }
 
         @media (max-width: 576px) {
@@ -850,7 +952,6 @@
         }
 
         /* أنماط CSS السابقة تبقى كما هي */
-        /* ... (جميع أنماط CSS السابقة) ... */
         
         /* إضافة أنماط للتنقل السلس */
         html {
@@ -976,10 +1077,17 @@
         </div>
     </section>
 
+
+
+
     <!-- شريط التنقل بين الأقسام -->
+
+
+     <!-- 
     <div class="section-nav">
         <div class="container section-nav-container">
             <a href="#admissions-intro">مقدمة</a>
+            <a href="#special-offers">العروض الخاصة</a>
             <a href="#admission-process">خطوات التقديم</a>
             <a href="#requirements">متطلبات القبول</a>
             <a href="#fees">الرسوم الدراسية</a>
@@ -987,6 +1095,9 @@
             <a href="#faq">أسئلة شائعة</a>
         </div>
     </div>
+
+
+شريط التنقل بين الأقسام -->
 
     <!-- Admissions Intro -->
     <section id="admissions-intro" class="admissions-intro">
@@ -1002,6 +1113,57 @@
                     <div class="intro-icon">
                         <i class="fas fa-user-graduate"></i>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Offers Section -->
+    <section id="special-offers" class="special-offers">
+        <div class="container">
+            <h2 class="section-title">عروض خاصة</h2>
+            <div class="offers-container">
+                <div class="offer-card">
+                    <div class="offer-badge">عرض العائلة</div>
+                    <div class="offer-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>خصومات للأخوات</h3>
+                    <p>تقدم المدرسة خصومات خاصة للعائلات التي لديها أكثر من ابنة مسجلة</p>
+                    <ul class="offer-features">
+                        <li>خصم 20% للابنة الثانية</li>
+                        <li>خصم 30% للابنة الثالثة</li>
+                        <li>مقعد مجاني للابنة الرابعة</li>
+                    </ul>
+                </div>
+                
+                <div class="offer-card">
+                    <div class="offer-badge">عرض التميز</div>
+                    <div class="offer-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>مكافآت التميز الأكاديمي</h3>
+                    <p>تشجيعاً للطالبات المتفوقات، تقدم المدرسة الخصومات التالية</p>
+                    <ul class="offer-features">
+                        <li>خصم 50% للطالبة الحاصلة على المركز الأول في آخر ثلاث سنوات</li>
+                        <li>خصم 20% للطالبة الحاصلة على المركز الأول في آخر عام دراسي</li>
+                        <li>12 مقعد مجاني للمتفوقات تنافسياً في المرحلتين الأساسية والثانوية</li>
+                    </ul>
+                </div>
+                
+                <div class="offer-card">
+                    <div class="offer-badge">عروض الافتتاح</div>
+                    <div class="offer-icon">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <h3>عروض ترويجية خاصة</h3>
+                    <p>بمناسبة افتتاح المدرسة، لدينا عروض محدودة لفترة الافتتاح</p>
+                    <ul class="offer-features">
+                        <li>مقاعد مجانية للعشرة الأوائل للصف التاسع</li>
+                        <li>مقاعد مجانية لحافظات القرآن الكريم</li>
+                        <li>خصم 40% للأيتام</li>
+                        <li>خصم 15% للتسجيل المبكر (قبل نهاية فبراير)</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -1123,7 +1285,7 @@
                         <td>الكتب، الزي المدرسي، المعامل</td>
                     </tr>
                     <tr>
-                        <td>المتوسط</td>
+                        <td>الاعدادي</td>
                         <td>25,000 ر.س</td>
                         <td>الكتب، الزي، المعامل، الرحلات</td>
                     </tr>
@@ -1132,11 +1294,7 @@
                         <td>28,000 ر.س</td>
                         <td>الكتب، الزي، المعامل، التوجيه الجامعي</td>
                     </tr>
-                    <tr>
-                        <td>خصم الأخوات</td>
-                        <td><span class="discount-badge">10% خصم</span> للشقيقة الثانية</td>
-                        <td><span class="discount-badge">15% خصم</span> بدءاً من الشقيقة الثالثة</td>
-                    </tr>
+                    
                 </tbody>
             </table>
             <p style="text-align: center; margin-top: 20px; font-style: italic;">
