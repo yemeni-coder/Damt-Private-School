@@ -7,144 +7,29 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="shared-styles.css">
+    
 
 
 </head>
 
 
-    <style>
-        :root {
-    --primary-color: #6a1b9a;
-    --secondary-color: #f48fb1;
-    --accent-color: #ce93d8;
-    --light-color: #f3e5f5;
-    --dark-color: #4a148c;
-    --text-color: #333;
-    --light-text: #777;
-    --white: #fff;
-}
+<style>
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Tajawal', sans-serif;
-}
 
-body {
-    background-color: #f9f9f9;
-    color: var(--text-color);
-    line-height: 1.6;
-}
 
-.container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
-}
-
-/* Header Styles */
-header {
-    background: var(--white);
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-.header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 0;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-}
-
-.logo img {
-    height: 60px;
-    margin-left: 15px;
-}
-
-.logo h1 {
-    color: var(--primary-color);
-    font-size: 1.8rem;
-}
-
-.nav-menu {
-    display: flex;
-    list-style: none;
-}
-
-.nav-menu li {
-    margin: 0 10px;
-}
-
-.nav-menu a {
-    text-decoration: none;
-    color: var(--text-color);
-    font-weight: 600;
-    font-size: 1.1rem;
-    padding: 5px 10px;
-    transition: all 0.3s ease;
-}
-
-.nav-menu a:hover {
-    color: var(--primary-color);
-}
-
-.nav-menu a.active {
-    color: var(--primary-color);
-    border-bottom: 2px solid var(--primary-color);
-}
-
-.mobile-menu-btn {
-    display: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: var(--primary-color);
-}
-
-/* Hero Section */
-.hero {
-    background: linear-gradient(rgba(106, 27, 154, 0.8), rgba(74, 20, 140, 0.8)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
-    background-size: cover;
-    background-position: center;
-    color: var(--white);
-    padding: 100px 0;
-    text-align: center;
-}
-
-.hero-content {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.hero h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-}
-
-.hero p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-}
 
 .btn {
     display: inline-block;
     background: var(--secondary-color);
     color: var(--white);
-    padding: 12px 30px;
-    border-radius: 30px;
+    padding: 10px 30px;
+    border-radius: 20px;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 800;
     transition: all 0.3s ease;
     border: none;
     cursor: pointer;
+    margin-top: 25px; /* زيادة هذه القيمة فقط */
 }
 
 .btn:hover {
@@ -270,14 +155,12 @@ header {
 }
 
 .testimonial-text::before,
-
 .testimonial-text::after {
-    content: """;
+    content: '"'; /* استخدام كود ASCII الصحيح للاقتباس */
     font-size: 3rem;
     color: var(--secondary-color);
     opacity: 0.5;
     position: absolute;
-
 }
 
 .testimonial-text::before {
@@ -286,367 +169,40 @@ header {
 }
 
 .testimonial-text::after {
-    content: """;
+    content: '"';
     bottom: -40px;
     left: -10px;
-    
 }
 
 .testimonial-author {
     font-weight: 600;
     font-size: 1.1rem;
+
 }
-
-/* Footer */
-footer {
-    background: var(--dark-color);
-    color: var(--white);
-    padding: 60px 0 20px;
-}
-
-.footer-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    margin-bottom: 40px;
-}
-
-.footer-column h3 {
-    font-size: 1.4rem;
-    margin-bottom: 20px;
-    position: relative;
-    padding-bottom: 10px;
-}
-
-.footer-column h3::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 50px;
-    height: 2px;
-    background: var(--secondary-color);
-}
-
-.footer-links {
-    list-style: none;
-}
-
-.footer-links li {
-    margin-bottom: 10px;
-}
-
-.footer-links a {
-    color: var(--light-color);
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-.footer-links a:hover {
-    color: var(--secondary-color);
-    padding-right: 5px;
-}
-
-.contact-info {
-    list-style: none;
-}
-
-.contact-info li {
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-}
-
-.contact-info i {
-    margin-left: 10px;
-    color: var(--secondary-color);
-    font-size: 1.2rem;
-}
-
-.social-links {
-    display: flex;
-    margin-top: 20px;
-}
-
-.social-links a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1);
-    color: var(--white);
-    margin-left: 10px;
-    transition: all 0.3s ease;
-}
-
-.social-links a:hover {
-    background: var(--secondary-color);
-    transform: translateY(-3px);
-}
-
-.copyright {
-    text-align: center;
-    padding-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-
-
-
-/* أنماط قسم آراء أولياء الأمور */
-.testimonials {
-    background-color: #f8f9fa;
-    padding: 60px 0;
-}
-
-.testimonial-slider {
-    max-width: 800px;
-    margin: 0 auto;
-    position: relative;
-}
-
-.testimonial {
-    background-color: white;
-    border-radius: 10px;
-    padding: 30px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    text-align: center;
-    margin: 0 20px;
-}
-
-.testimonial-text {
-    font-size: 18px;
-    line-height: 1.8;
-    color: #555;
-    margin-bottom: 20px;
-    font-style: italic;
-}
-
-.testimonial-author {
-    font-weight: bold;
-    color: #6a1b9a;
-    font-size: 16px;
-}
-
-
-/* Responsive Styles */
-@media (max-width: 992px) {
-    .nav-menu {
-        position: fixed;
-        top: 80px;
-        right: -100%;
-        background: var(--white);
-        width: 250px;
-        height: calc(100vh - 80px);
-        flex-direction: column;
-        padding: 40px 20px;
-        transition: all 0.4s ease;
-        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-    }
-    
-    .nav-menu.active {
-        right: 0;
-    }
-    
-    .nav-menu li {
-        margin: 15px 0;
-    }
-    
-    .mobile-menu-btn {
-        display: block;
-    }
-    
-    .hero h2 {
-        font-size: 2rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .hero {
-        padding: 80px 0;
-    }
-    
-    .section-title {
-        font-size: 1.8rem;
-    }
-    
-    .feature-card, .news-card {
-        padding: 20px;
-    }
-}
-
-@media (max-width: 576px) {
-    .logo h1 {
-        font-size: 1.5rem;
-    }
-    
-    .hero h2 {
-        font-size: 1.8rem;
-    }
-    
-    .hero p {
-        font-size: 1rem;
-    }
-    
-    .btn {
-        padding: 10px 25px;
-    }
-/* Responsive Styles */
-        @media (max-width: 1200px) {
-            .container {
-                padding: 0 30px;
-            }
-        }
-
-        @media (max-width: 992px) {
-            .philosophy-content {
-                grid-template-columns: 1fr;
-                gap: 50px;
-            }
-            
-            .qualifications-grid {
-                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            }
-            
-            .philosophy-image {
-                height: 350px;
-            }
-            
-            .philosophy-icon {
-                font-size: 6rem;
-            }
-            
-            .nav-menu {
-                position: fixed;
-                top: 90px;
-                right: -100%;
-                background: var(--white);
-                width: 280px;
-                height: calc(100vh - 90px);
-                flex-direction: column;
-                padding: 40px 20px;
-                transition: all 0.4s ease;
-                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-                z-index: 999;
-            }
-            
-            .nav-menu.active {
-                right: 0;
-            }
-            
-            .nav-menu li {
-                margin: 15px 0;
-                width: 100%;
-                text-align: center;
-            }
-            
-            .mobile-menu-btn {
-                display: block;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .page-banner {
-                padding: 80px 0;
-            }
-            
-            .page-banner h2 {
-                font-size: 2.3rem;
-            }
-            
-            .philosophy-text h2 {
-                font-size: 1.8rem;
-            }
-            
-            .philosophy-text h3 {
-                font-size: 1.4rem;
-            }
-            
-            .method-tab {
-                padding: 12px 25px;
-                font-size: 1rem;
-            }
-            
-            .teaching-philosophy,
-            .qualifications,
-            .teaching-methods,
-            .professional-dev {
-                padding: 60px 0;
-            }
-            
-            .footer-grid {
-                gap: 30px;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .page-banner h2 {
-                font-size: 2rem;
-            }
-            
-            .page-banner p {
-                font-size: 1.1rem;
-            }
-            
-            .logo h1 {
-                font-size: 1.5rem;
-            }
-            
-            .logo img {
-                height: 50px;
-            }
-            
-            .qualifications-grid,
-            .method-list,
-            .dev-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 35px;
-            }
-            
-            .philosophy-image {
-                height: 250px;
-            }
-            
-            .philosophy-icon {
-                font-size: 4rem;
-            }
-            
-            .qualification-card {
-                padding: 30px 20px;
-            }
-            
-            .method-tab {
-                width: 100%;
-                margin: 5px 0;
-            }
-            
-            .methods-tabs {
-                flex-direction: column;
-            }
-        }
-
-
-
-
-
 
     /* about page  */
 
-
-
-
-
     
-}
-    </style>
+    
+
+
+</style>
+
 </head>
+
+
 <body>
+
+       <!-- شريط التقدم -->
+    <div class="progress-container">
+        <div class="progress-bar" id="myProgressBar"></div>
+    </div>
+    
+    <!-- زر العودة للأعلى -->
+    <div class="floating-button" id="scrollToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
     <!-- Header -->
     <header>
         <div class="container header-container">
@@ -657,6 +213,8 @@ footer {
         <h1>مدرسة دمت الأهلية</h1>
     </div>
             
+
+    
             <nav>
                 <ul class="nav-menu">
                     <li><a href="index.html" class="active">الرئيسية</a></li>
@@ -673,14 +231,19 @@ footer {
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container hero-content">
-            <h2>مرحبا بكم في مدرسة دمت الأهلية</h2>
-            <p>مدرسة خاصة للبنات تهدف إلى تقديم تعليم متميز يجمع بين الأصالة والحداثة، لإعداد جيل من القائدات الواعيات</p>
-            <a href="admissions.html" class="btn">التسجيل الآن</a>
-        </div>
+ <!-- Page Banner -->
+<section class="page-banner">
+    <div class="container">
+        <h2>مرحبا بكم في مدرسة دمت الأهلية</h2>
+        <p style="margin-bottom: 30px;">مدرسة خاصة للبنات تهدف إلى تقديم تعليم متميز يجمع بين الأصالة والحداثة، لإعداد جيل من القائدات الواعيات</p>
+        <a href="admissions.html" class="btn">التسجيل الآن</a>
+    </div>
+</section>
+
+
     </section>
+
+    
 
     <!-- Features Section -->
     <section class="features">
@@ -762,180 +325,55 @@ footer {
         </div>
     </section>
 
-    <!-- Footer -->
+
+
+
+   <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-column">
                     <h3>عن المدرسة</h3>
-                    <p>مدرسة دمت الأهلية هي مدرسة خاصة للبنات تأسست عام 2005 بهدف تقديم تعليم متميز يجمع بين الأصالة والحداثة.</p>
+                    <p>مدرسة دمت الأهلية مؤسسة تعليمية رائدة تهدف إلى تقديم تعليم متميز يجمع بين الأصالة والحداثة، وتهيئة الطالبات لمواجهة متطلبات العصر بثقة وكفاءة.</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
                 
-                <div class="footer-column">
-                    <h3>روابط سريعة</h3>
-                    <ul class="footer-links">
-                        <li><a href="index.html">الرئيسية</a></li>
-                        <li><a href="about.html">عن المدرسة</a></li>
-                        <li><a href="academics.html">المناهج</a></li>
-                        <li><a href="faculty.html">المعلمات</a></li>
-                        <li><a href="admissions.html">القبول</a></li>
-                        <li><a href="contact.html">اتصل بنا</a></li>
-                    </ul>
-                </div>
+                
                 
                 <div class="footer-column">
                     <h3>اتصل بنا</h3>
                     <ul class="contact-info">
-                        <li><i class="fas fa-map-marker-alt"></i> شارع الملك عبدالله، الرياض، السعودية</li>
-                        <li><i class="fas fa-phone"></i> 0096612345678</li>
-                        <li><i class="fas fa-envelope"></i> info@damet-school.edu.sa</li>
+                        <li><i class="fas fa-map-marker-alt"></i> مدينة دمت - الدائري الغربي (خلف جامع الأسدي)</li>
+                        <li><i class="fas fa-phone"></i> 774549999/730699996</li>
+                        <li><i class="fas fa-envelope"></i> d.p.s.fw2025@gmail.com</li>
+                        <li><i class="fas fa-clock"></i> السبت - الاربعاء: 7:30 ص - 12:30 م</li>
                     </ul>
                 </div>
             </div>
             
-            <div class="copyright">
-                <p>جميع الحقوق محفوظة © 2023 مدرسة دمت الأهلية</p>
-            </div>
+           <div class="copyright">
+    <p>جميع الحقوق محفوظة &copy; 2023 <a href="https://github.com/yemeni-coder" target="_blank" style="color: #f48fb1; text-decoration: none;">Yemeni-Coder</a></p>
+</div>
         </div>
     </footer>
 
-    <script>
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const navMenu = document.querySelector('.nav-menu');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-        });
-        
-        // Close menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!e.target.closest('.nav-menu') && !e.target.closest('.mobile-menu-btn')) {
-                navMenu.classList.remove('active');
-            }
-        });
-    </script>
 
-    <script>
-// انتظر حتى يتم تحميل DOM بالكامل
-document.addEventListener('DOMContentLoaded', function() {
-    // آراء أولياء الأمور المتغيرة
-    const testimonials = [
-        {
-            text: "ابنتي تطورت بشكل ملحوظ منذ التحاقها بمدرسة دمت الأهلية، ليس academically فقط ولكن أيضًا على المستوى الشخصي والاجتماعي",
-            author: "والد الطالبة سارة"
-        },
-        {
-            text: "نحن سعداء جدًا بالمستوى التعليمي والاهتمام الذي تقدمه المدرسة، والمعلمات متخصصات ومتميزات في تعليم البنات",
-            author: "والد الطالبة لمى"
-        },
-        {
-            text: "المناهج المتطورة والأنشطة اللامنهجية ساهمت في تطوير مهارات ابنتي بشكل كبير، شكرًا لإدارة المدرسة",
-            author: "والد الطالبة نوف"
-        },
-        {
-            text: "الجو التعليمي المناسب والاهتمام الفردي بكل طالبة يجعل المدرسة بيئة مثالية للتعلم والنمو",
-            author: "والدة الطالبة ريم"
-        },
-        {
-            text: "نشكر إدارة المدرسة على جهودها في تنظيم الفعاليات والأنشطة التي تنمي قدرات الطالبات الإبداعية",
-            author: "والد الطالبة يارا"
-        },
-        {
-            text: "الاهتمام بالقيم الإسلامية واللغة العربية إلى جانب المناهج الحديثة هو ما يميز مدرسة دمت الأهلية",
-            author: "والد الطالبة جود"
-        },
 
-        {
-    text: "الاهتمام باللغات الأجنبية إلى جانب اللغة العربية يعطي الطالبات ميزة تنافسية رائعة في سوق العمل المستقبلي",
-    author: "والد الطالبة لين"
-},
-{
-    text: "برنامج التوجيه والإرشاد الطلابي ساعد ابنتي على تجاوز الصعوبات الدراسية والاجتماعية بثقة أكبر",
-    author: "والدة الطالبة تالا"
-},
-{
-    text: "المختبرات المجهزة بأحدث التقنيات توفر لطالباتنا فرصة التعلم العملي والتجريبي المتميز",
-    author: "والد الطالبة لمياء"
-},
-{
-    text: "نقدر حرص المدرسة على التواصل المستمر مع أولياء الأمور وإطلاعنا على تقدم بناتنا بشكل دوري",
-    author: "والدة الطالبة روان"
-},
-{
-    text: "الأنشطة الرياضية والفنية المتنوعة ساعدت في اكتشاف مواهب ابنتي وتطويرها بشكل ملحوظ",
-    author: "والد الطالبة دانة"
-},
-{
-    text: "الجو الأسري والترابط بين الطالبات والمعلمات يخلق بيئة تعليمية آمنة ومحفزة للإبداع",
-    author: "والدة الطالبة جنا"
-},
-{
-    text: "الاهتمام بتعزيز الثقة بالنفس ومهارات القيادة لدى الطالبات يعد من أبرز مميزات المدرسة",
-    author: "والد الطالبة ميار"
-},
-{
-    text: "الرحلات التعليمية والزيارات الميدانية تثري خبرات الطالبات وتربط التعليم بالحياة الواقعية",
-    author: "والدة الطالبة لمى"
-},
-{
-    text: "نشكر إدارة المدرسة على التخطيط الجيد للعام الدراسي والالتزام بالتقويم الأكاديمي المعلن",
-    author: "والد الطالبة رغد"
-},
-{
-    text: "التركيز على تنمية المهارات الرقمية والتكنولوجية يعد الطالبات لمتطلبات العصر الحديث",
-    author: "والدة الطالبة سدى"
-},
-{
-    text: "الأنشطة التطوعية وخدمة المجتمع تغرس في الطالبات قيم المسؤولية الاجتماعية والعطاء",
-    author: "والد الطالبة لجين"
-},
-{
-    text: "نظام التعليم المدمج الذي تتبعه المدرسة وفر المرونة اللازمة مع الحفاظ على جودة التعليم",
-    author: "والدة الطالبة مها"
-},
-{
-    text: "الاهتمام بالصحة النفسية والجسدية للطالبات يظهر من خلال البرامج والأنشطة المتنوعة",
-    author: "والد الطالبة نورة"
-},
-{
-    text: "المكتبة الغنية بالمصادر والمراجع تشجع الطالبات على البحث والقراءة والاستكشاف",
-    author: "والدة الطالبة هيا"
-},
-{
-    text: "نظام التقويم والتقييم الشامل يعكس بوضوح تقدم الطالبات في جميع الجوانب التعليمية",
-    author: "والد الطالبة أروى"
-}
-    ];
-
-    // اختيار رأي عشوائي
-    const randomIndex = Math.floor(Math.random() * testimonials.length);
-    const testimonial = testimonials[randomIndex];
     
-    // تحديث النص والعنوان
-    const testimonialText = document.querySelector('.testimonial-text');
-    const testimonialAuthor = document.querySelector('.testimonial-author');
-    
-    if (testimonialText && testimonialAuthor) {
-        testimonialText.textContent = testimonial.text;
-        testimonialAuthor.textContent = `- ${testimonial.author}`;
-    }
-});
-</script>
 
-
-<script src="shared-scripts.js"></script>
-<!-- نافذة عرض الشعار -->
+    <!-- نافذة عرض الشعار -->
 <div id="logoModal" class="logo-modal">
     <span class="close-modal" onclick="closeLogoModal()">&times;</span>
     <img class="logo-modal-content" src="logo3.jpg" alt="School Logo">
 </div>
+
+<script src="shared-scripts.js"></script>
         
+
 </body>
 </html>

@@ -9,146 +9,23 @@
     <link rel="stylesheet" href="shared-styles.css"></head>
 
     <style>
-        :root {
-            --primary-color: #6a1b9a;
-            --primary-light: #9c4dcc;
-            --primary-dark: #38006b;
-            --secondary-color: #f48fb1;
-            --accent-color: #ce93d8;
-            --light-color: #f3e5f5;
-            --dark-color: #4a148c;
-            --text-color: #333;
-            --light-text: #777;
-            --white: #fff;
-            --gradient: linear-gradient(135deg, #6a1b9a 0%, #8e24aa 100%);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Tajawal', sans-serif;
-        }
-
-        body {
-            background-color: #f9f9f9;
-            color: var(--text-color);
-            line-height: 1.6;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
+       
+        
 
         /* Header Styles - مطابقة تماماً للصفحة الأولى */
-        header {
-            background: var(--white);
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+        
 
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 0;
-        }
 
-        .logo {
-            display: flex;
-            align-items: center;
-        }
 
-        .logo img {
-            height: 60px;
-            margin-left: 15px;
-        }
 
-        .logo h1 {
-            color: var(--primary-color);
-            font-size: 1.8rem;
-        }
-
-        .nav-menu {
-            display: flex;
-            list-style: none;
-        }
-
-        .nav-menu li {
-            margin: 0 10px;
-        }
-
-        .nav-menu a {
-            text-decoration: none;
-            color: var(--text-color);
-            font-weight: 600;
-            font-size: 1.1rem;
-            padding: 5px 10px;
-            transition: all 0.3s ease;
-        }
-
-        .nav-menu a:hover {
-            color: var(--primary-color);
-        }
-
-        .nav-menu a.active {
-            color: var(--primary-color);
-            border-bottom: 2px solid var(--primary-color);
-        }
-
-        .mobile-menu-btn {
-            display: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: var(--primary-color);
-        }
 
         /* Page Banner */
-        .page-banner {
-            background: var(--gradient), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            color: var(--white);
-            padding: 100px 0;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
+       
 
-        .page-banner::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            background: rgba(0, 0, 0, 0.3);
-            z-index: 1;
-        }
 
-        .page-banner .container {
-            position: relative;
-            z-index: 2;
-        }
 
-        .page-banner h2 {
-            font-size: 2.8rem;
-            margin-bottom: 15px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
 
-        .page-banner p {
-            font-size: 1.3rem;
-            opacity: 0.9;
-            max-width: 700px;
-            margin: 0 auto;
-        }
+
 
         /* Academics Intro */
         .academics-intro {
@@ -482,103 +359,19 @@
             color: var(--primary-color);
         }
 
+
+
+
+
+
+
+
         /* Footer - مطابق للصفحة الأولى */
-        footer {
-            background: var(--dark-color);
-            color: var(--white);
-            padding: 80px 0 20px;
-        }
+       
 
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 50px;
-        }
 
-        .footer-column h3 {
-            font-size: 1.5rem;
-            margin-bottom: 25px;
-            position: relative;
-            padding-bottom: 15px;
-        }
 
-        .footer-column h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            width: 60px;
-            height: 3px;
-            background: var(--secondary-color);
-            border-radius: 2px;
-        }
 
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 12px;
-        }
-
-        .footer-links a {
-            color: var(--light-color);
-            text-decoration: none;
-            transition: all 0.3s ease;
-            display: inline-block;
-        }
-
-        .footer-links a:hover {
-            color: var(--secondary-color);
-            padding-right: 8px;
-        }
-
-        .contact-info {
-            list-style: none;
-        }
-
-        .contact-info li {
-            margin-bottom: 18px;
-            display: flex;
-            align-items: center;
-        }
-
-        .contact-info i {
-            margin-left: 12px;
-            color: var(--secondary-color);
-            font-size: 1.3rem;
-        }
-
-        .social-links {
-            display: flex;
-            margin-top: 25px;
-        }
-
-        .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
-            color: var(--white);
-            margin-left: 12px;
-            transition: all 0.3s ease;
-        }
-
-        .social-links a:hover {
-            background: var(--secondary-color);
-            transform: translateY(-5px);
-        }
-
-        .copyright {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 1.1rem;
-        }
 
         /* Responsive Styles - مطابقة للصفحة الأولى */
         @media (max-width: 1200px) {
@@ -748,6 +541,23 @@
     </style>
 </head>
 <body>
+
+
+
+
+       <!-- شريط التقدم -->
+    <div class="progress-container">
+        <div class="progress-bar" id="myProgressBar"></div>
+    </div>
+    
+    <!-- زر العودة للأعلى -->
+    <div class="floating-button" id="scrollToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+
+
+    
     <!-- Header - مطابق للصفحة الأولى -->
     <header>
       <div class="container header-container">
@@ -1215,7 +1025,7 @@
 }
 </style>
 
-    <!-- Footer - مطابق للصفحة الأولى -->
+    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-grid">
@@ -1230,62 +1040,30 @@
                     </div>
                 </div>
                 
-                <div class="footer-column">
-                    <h3>روابط سريعة</h3>
-                    <ul class="footer-links">
-                        <li><a href="index.html">الرئيسية</a></li>
-                        <li><a href="about.html">عن المدرسة</a></li>
-                        <li><a href="academics.html">المناهج</a></li>
-                        <li><a href="faculty.html">المعلمات</a></li>
-                        <li><a href="admissions.html">القبول والتسجيل</a></li>
-                        <li><a href="contact.html">اتصل بنا</a></li>
-                    </ul>
-                </div>
                 
-                <div class="footer-column">
-                    <h3>مراحل التعليم</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">الروضة</a></li>
-                        <li><a href="#">المرحلة الابتدائية</a></li>
-                        <li><a href="#">المرحلة المتوسطة</a></li>
-                        <li><a href="#">المرحلة الثانوية</a></li>
-                        <li><a href="#">الأنشطة الطلابية</a></li>
-                        <li><a href="#">البرامج الخاصة</a></li>
-                    </ul>
-                </div>
                 
                 <div class="footer-column">
                     <h3>اتصل بنا</h3>
                     <ul class="contact-info">
-                        <li><i class="fas fa-map-marker-alt"></i> شارع الملك عبدالله، حي الروضة، دمت</li>
-                        <li><i class="fas fa-phone"></i> 0171234567</li>
-                        <li><i class="fas fa-envelope"></i> info@dammatschool.edu.sa</li>
-                        <li><i class="fas fa-clock"></i> الأحد - الخميس: 7:30 ص - 3:30 م</li>
+                        <li><i class="fas fa-map-marker-alt"></i> مدينة دمت - الدائري الغربي (خلف جامع الأسدي)</li>
+                        <li><i class="fas fa-phone"></i> 774549999/730699996</li>
+                        <li><i class="fas fa-envelope"></i> d.p.s.fw2025@gmail.com</li>
+                        <li><i class="fas fa-clock"></i> السبت - الاربعاء: 7:30 ص - 12:30 م</li>
                     </ul>
                 </div>
             </div>
             
-            <div class="copyright">
-                <p>جميع الحقوق محفوظة &copy; 2023 مدرسة دمت الأهلية</p>
-            </div>
+           <div class="copyright">
+    <p>جميع الحقوق محفوظة &copy; 2023 <a href="https://github.com/yemeni-coder" target="_blank" style="color: #f48fb1; text-decoration: none;">Yemeni-Coder</a></p>
+</div>
         </div>
     </footer>
 
+
+
+
     <script>
-        // Mobile Menu Toggle - مطابق للصفحة الأولى
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const navMenu = document.querySelector('.nav-menu');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-        });
-        
-        // Close menu when clicking outside - مطابق للصفحة الأولى
-        document.addEventListener('click', (e) => {
-            if (!e.target.closest('.nav-menu') && !e.target.closest('.mobile-menu-btn')) {
-                navMenu.classList.remove('active');
-            }
-        });
+       
 
         // Tab functionality for curriculum section
         const tabBtns = document.querySelectorAll('.tab-btn');
@@ -1308,12 +1086,17 @@
     </script>
 
 
-<script src="shared-scripts.js"></script>
-<!-- نافذة عرض الشعار -->
+
+
+
+  <!-- نافذة عرض الشعار -->
 <div id="logoModal" class="logo-modal">
     <span class="close-modal" onclick="closeLogoModal()">&times;</span>
     <img class="logo-modal-content" src="logo3.jpg" alt="School Logo">
 </div>
+
+
+<script src="shared-scripts.js"></script>
 
 </body>
 </html>
