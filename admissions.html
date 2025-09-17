@@ -741,7 +741,7 @@
         <div class="container header-container">
     <div class="logo">
         <a href="javascript:void(0);" class="logo-link" onclick="openLogoModal()">
-            <img src="logo3.jpg" alt="School Logo" class="clickable-logo">
+            <img src="images/logo3.jpg" alt="School Logo" class="clickable-logo">
         </a>
         <h1>مدرسة دمت الأهلية</h1>
     </div>
@@ -776,24 +776,22 @@
  
 
 
-    <!-- Admissions Intro -->
-    <section id="admissions-intro" class="admissions-intro">
-        <div class="container">
-            <div class="intro-content">
-                <div class="intro-text">
-                    <h2>مرحباً بكم في عملية القبول</h2>
-                    <p>نحن سعداء لاهتمامكم بمدرسة دمت الأهلية. نسعى لتوفير تجربة قبول ميسرة وشفافة تساعدكم على اتخاذ القرار الأنسب لمستقبل ابنتكم التعليمي.</p>
-                    <p>تفتح المدرسة باب التسجيل للعام الدراسي الجديد في الفترة من 1 فبراير إلى 30 أبريل من كل عام. نرحب بالطالبات من جميع الصفوف من الروضة إلى الصف الثاني عشر.</p>
-                    <p>لضمان جودة التعليم وتقديم الاهتمام الفردي لكل طالبة، فإن عدد المقاعد محدود، لذا ننصح بالتقديم المبكر.</p>
-                </div>
-                <div class="intro-image">
-                    <div class="intro-icon">
-                        <i class="fas fa-user-graduate"></i>
-                    </div>
-                </div>
+ <!-- Admissions Intro -->
+<section id="admissions-intro" class="admissions-intro">
+    <div class="container">
+        <div class="intro-content">
+            <div class="intro-text">
+                <h2>مرحباً بكم في عملية القبول</h2>
+                <p>نحن سعداء لاهتمامكم بمدرسة دمت الأهلية. نسعى لتوفير تجربة قبول ميسرة وشفافة تساعدكم على اتخاذ القرار الأنسب لمستقبل ابنتكم التعليمي.</p>
+                <p>تفتح المدرسة باب التسجيل للعام الدراسي الجديد في الفترة من 1 فبراير إلى 30 أبريل من كل عام. نرحب بالطالبات من جميع الصفوف من الروضة إلى الصف الثاني عشر.</p>
+                <p>لضمان جودة التعليم وتقديم الاهتمام الفردي لكل طالبة، فإن عدد المقاعد محدود، لذا ننصح بالتقديم المبكر.</p>
+            </div>
+            <div class="intro-image">
+                <img src="https://png.pngtree.com/png-vector/20250602/ourmid/pngtree-cute-anime-style-girl-in-graduation-gown-holding-certificate-and-roses-png-image_16451326.png" alt="عملية القبول">
             </div>
         </div>
-    </section>
+    </div>
+</section>  
 
     <!-- Special Offers Section -->
     <section id="special-offers" class="special-offers">
@@ -906,7 +904,6 @@
                         <li>صور شخصية حديثة (4 صور)</li>
                         <li>كشف الدرجات من المدرسة السابقة</li>
                         <li>شهادة نقل للطالبات المنقولات</li>
-                        <li>سجل التطعيمات</li>
                     </ul>
                 </div>
                 <div class="requirement-card">
@@ -976,83 +973,278 @@
         </div>
     </section>
 
-    <!-- Application Form -->
-    <section id="application-form" class="application-form">
-        <div class="container">
-            <h2 class="section-title">تقديم طلب الالتحاق</h2>
-            <div class="form-container">
-                <form id="admissionForm">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="studentName">اسم الطالبة الثلاثي *</label>
-                            <input type="text" id="studentName" name="studentName" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="birthDate">تاريخ الميلاد *</label>
-                            <input type="date" id="birthDate" name="birthDate" required>
-                        </div>
-                    </div>
-                    
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="grade">الصف المتقدم له *</label>
-                            <select id="grade" name="grade" required>
-                                <option value="">اختر الصف</option>
-                                <option value="kg1">روضة أولى</option>
-                                <option value="kg2">روضة ثانية</option>
-                                <option value="g1">الصف الأول الابتدائي</option>
-                                <option value="g2">الصف الثاني الابتدائي</option>
-                                <option value="g3">الصف الثالث الابتدائي</option>
-                                <option value="g4">الصف الرابع الابتدائي</option>
-                                <option value="g5">الصف الخامس الابتدائي</option>
-                                <option value="g6">الصف السادس الابتدائي</option>
-                                <option value="g7">الصف الأول المتوسط</option>
-                                <option value="g8">الصف الثاني المتوسط</option>
-                                <option value="g9">الصف الثالث المتوسط</option>
-                                <option value="g10">الصف الأول الثانوي</option>
-                                <option value="g11">الصف الثاني الثانوي</option>
-                                <option value="g12">الصف الثالث الثانوي</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="currentSchool">المدرسة الحالية/السابقة</label>
-                            <input type="text" id="currentSchool" name="currentSchool">
-                        </div>
-                    </div>
-                    
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="fatherName">اسم الأب الثلاثي *</label>
-                            <input type="text" id="fatherName" name="fatherName" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="motherName">اسم الأم الثلاثي *</label>
-                            <input type="text" id="motherName" name="motherName" required>
-                        </div>
-                    </div>
-                    
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="phone">رقم الجوال *</label>
-                            <input type="tel" id="phone" name="phone" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">البريد الإلكتروني *</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="message">ملاحظات إضافية (اختياري)</label>
-                        <textarea id="message" name="message" rows="4"></textarea>
-                    </div>
-                    
-                    <button type="submit" class="btn btn-block">إرسال الطلب</button>
-                </form>
-            </div>
-        </div>
-    </section>
 
+
+
+
+
+
+<!-- Application Form -->
+<section id="application-form" class="application-form">
+    <div class="container">
+        <h2 class="section-title">تقديم طلب الالتحاق</h2>
+       <p style="color:#555; font-size:14px; margin-bottom:15px;">
+    ⚠️ يرجى التأكد من أن جميع البيانات المدخلة تخص <strong>الطالب/ة</strong>، 
+    ما عدا رقم الجوال والبريد الإلكتروني اللذان يجب أن يكونا لولي الأمر أو الشخص المسؤول.<br>
+    <small>📌 ملاحظة: هذا النموذج يُعد خطوة أولى فقط في عملية التسجيل. بعد استلام طلبكم، سيقوم فريق المدرسة بالتواصل معكم عبر المعلومات المقدمة (الجوال أو البريد) لإكمال باقي الإجراءات. لا يُعتبر تقديم الطلب عبر هذا النموذج تسجيلًا نهائيًا.</small>
+</p>
+        <div class="form-container">
+            <form id="admissionForm" action="https://script.google.com/macros/s/AKfycbztfDpMRRwDHAWOrr7Ji8ocx08QuXF6lv6Xlbp3xOuBs9NSiHBaXvYHy8cGa-jzVLsO/exec" method="POST">
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="studentName">اسم الطالبة الثلاثي *</label>
+                        <input type="text" id="studentName" name="studentName" required minlength="5" placeholder="مثال: Fatima Ahmed Ali أو فاطمة أحمد علي">
+                    </div>
+                    <div class="form-group">
+                        <label for="birthDate">تاريخ الميلاد *</label>
+                        <input type="date" id="birthDate" name="birthDate" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="grade">الصف المتقدم له *</label>
+                        <select id="grade" name="grade" required>
+                            <option value="">اختر الصف</option>
+                            <option value="g1">الصف الأول</option>
+                            <option value="g2">الصف الثاني</option>
+                            <option value="g3">الصف الثالث</option>
+                            <option value="g4">الصف الرابع</option>
+                            <option value="g5">الصف الخامس</option>
+                            <option value="g6">الصف السادس</option>
+                            <option value="g7">الصف السابع</option>
+                            <option value="g8">الصف الثامن</option>
+                            <option value="g9">الصف التاسع</option>
+                            <option value="g10">الصف الأول الثانوي</option>
+                            <option value="g11">الصف الثاني الثانوي</option>
+                            <option value="g12">الصف الثالث الثانوي</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="currentSchool">المدرسة الحالية/السابقة</label>
+                        <input type="text" id="currentSchool" name="currentSchool" placeholder="مثال: مدرسة النصر">
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="fatherName">اسم الأب الثلاثي *</label>
+                        <input type="text" id="fatherName" name="fatherName" required minlength="5" placeholder="مثال: Ahmed Mohammed أو أحمد محمد">
+                    </div>
+                    <div class="form-group">
+                        <label for="motherName">اسم الأم الثلاثي *</label>
+                        <input type="text" id="motherName" name="motherName" required minlength="5" placeholder="مثال: Sara Khalid أو سارة خالد">
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="phone">رقم الجوال (ولي الأمر) *</label>
+                        <p style="font-size:12px; color:#d35400; margin: 5px 0;">⚠️ تأكد من صحة الرقم — سيكون وسيلة التواصل الرئيسية مع ولي الأمر.</p>
+                        <input type="tel" id="phone" name="phone" required placeholder="أدخل رقم الجوال مع رمز الدولة إن لزم">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">البريد الإلكتروني لولي الأمر (اختياري)</label>
+                        <input type="email" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="مثال: example@gmail.com">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">ملاحظات إضافية (اختياري)</label>
+                    <textarea id="message" name="message" rows="4" placeholder="مثال: رقم التواصل في واتس اب هو نفس الرقم المسجل في الاعلى."></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn-block" id="submitButton">إرسال الطلب</button>
+                
+                <div id="form-message" style="display: none; margin-top: 20px; padding: 10px; border-radius: 5px; text-align: center;"></div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<script>
+// Set min and max birth date dynamically (age 4 to 20)
+function setBirthDateLimits() {
+    const today = new Date();
+    const maxDate = new Date(today.getFullYear() - 4, today.getMonth(), today.getDate());
+    const minDate = new Date(today.getFullYear() - 20, today.getMonth(), today.getDate());
+
+    const birthDateInput = document.getElementById('birthDate');
+    birthDateInput.setAttribute('max', maxDate.toISOString().split('T')[0]);
+    birthDateInput.setAttribute('min', minDate.toISOString().split('T')[0]);
+}
+
+// Validate names (at least 2 words, any letters or spaces/hyphens)
+function validateName(name) {
+    const nameRegex = /^[\w\s\-]{2,}(?:\s[\w\s\-]+)+$/;
+    return nameRegex.test(name.trim());
+}
+
+// Validate form before submission
+document.getElementById('admissionForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    const form = e.target;
+    const formData = new FormData(form);
+    const messageDiv = document.getElementById('form-message');
+    const submitButton = document.getElementById('submitButton');
+
+    // Disable button to prevent double submission
+    submitButton.disabled = true;
+    submitButton.textContent = 'جاري الإرسال...';
+
+    // Validate names (student, father, mother)
+    const studentName = formData.get("studentName");
+    const fatherName = formData.get("fatherName");
+    const motherName = formData.get("motherName");
+
+    if (!validateName(studentName)) {
+        showMessage('❌ اسم الطالبة يجب أن يحتوي على الأقل اسميْن (مثال: فاطمة علي أو Fatima Ali).', 'error');
+        reEnableSubmit();
+        return;
+    }
+
+    if (!validateName(fatherName)) {
+        showMessage('❌ اسم الأب يجب أن يحتوي على الأقل اسميْن.', 'error');
+        reEnableSubmit();
+        return;
+    }
+
+    if (!validateName(motherName)) {
+        showMessage('❌ اسم الأم يجب أن يحتوي على الأقل اسميْن.', 'error');
+        reEnableSubmit();
+        return;
+    }
+
+    // Validate grade selection
+    const grade = formData.get("grade");
+    if (!grade || grade === "") {
+        showMessage('❌ يرجى اختيار الصف المتقدم له.', 'error');
+        reEnableSubmit();
+        return;
+    }
+
+    // Soft phone validation: warn if looks suspicious, but don't block
+    const phone = formData.get("phone").trim();
+    if (phone.length < 9 || /[^+\d\s\-()]/.test(phone)) {
+        if (!confirm("⚠️ رقم الجوال يبدو غير معتاد. هل أنت متأكد من صحته؟\n(سيكون وسيلة التواصل الأساسية)")) {
+            reEnableSubmit();
+            return;
+        }
+    }
+
+    // Show loading message
+    showMessage('⏳ جاري إرسال الطلب... يرجى الانتظار', 'info');
+
+    try {
+        const response = await fetch(form.action, {
+            method: 'POST',
+            body: formData
+        });
+
+        const result = await response.json();
+
+        if (result.result === 'success') {
+            showMessage(`✅ تم الإرسال! ${result.message}`, 'success');
+            form.reset();
+        } else {
+            throw new Error(result.message || 'حدث خطأ غير متوقع');
+        }
+
+    } catch (error) {
+        showMessage(`❌ خطأ: ${error.message}`, 'error');
+    } finally {
+        reEnableSubmit();
+    }
+});
+
+function reEnableSubmit() {
+    const submitButton = document.getElementById('submitButton');
+    submitButton.disabled = false;
+    submitButton.textContent = 'إرسال الطلب';
+}
+
+// Helper function to show messages
+function showMessage(text, type) {
+    const messageDiv = document.getElementById('form-message');
+    messageDiv.style.display = 'block';
+    
+    switch(type) {
+        case 'success':
+            messageDiv.style.backgroundColor = '#d4edda';
+            messageDiv.style.color = '#155724';
+            break;
+        case 'error':
+            messageDiv.style.backgroundColor = '#f8d7da';
+            messageDiv.style.color = '#721c24';
+            break;
+        case 'info':
+            messageDiv.style.backgroundColor = '#fff3cd';
+            messageDiv.style.color = '#856404';
+            break;
+    }
+    
+    messageDiv.innerHTML = text;
+}
+
+// Initialize date limits on page load
+document.addEventListener('DOMContentLoaded', function() {
+    setBirthDateLimits();
+});
+</script>
+
+
+
+
+
+
+<script>
+document.getElementById('admissionForm').addEventListener('submit', async function(e) {
+    e.preventDefault(); // Stop the browser from submitting the form normally
+
+    const form = e.target;
+    const formData = new FormData(form);
+    const messageDiv = document.getElementById('form-message');
+
+    try {
+        const response = await fetch(form.action, {
+            method: 'POST',
+            body: formData
+        });
+
+        const result = await response.json(); // Expecting JSON response from your Google Script
+
+        messageDiv.style.display = 'block';
+
+        if (result.result === 'success') {
+            messageDiv.style.backgroundColor = '#d4edda'; // Light green
+            messageDiv.style.color = '#155724'; // Dark green text
+            messageDiv.innerHTML = `<strong>✅ تم الإرسال!</strong> ${result.message}`;
+            form.reset(); // Clear the form fields
+        } else {
+            throw new Error(result.message || 'حدث خطأ غير متوقع');
+        }
+
+    } catch (error) {
+        messageDiv.style.display = 'block';
+        messageDiv.style.backgroundColor = '#f8d7da'; // Light red
+        messageDiv.style.color = '#721c24'; // Dark red text
+        messageDiv.innerHTML = `<strong>❌ خطأ:</strong> ${error.message}`;
+    }
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+    
     <!-- FAQ Section -->
     <section id="faq" class="faq-section">
         <div class="container">
@@ -1174,7 +1366,7 @@
 <!-- نافذة عرض الشعار -->
 <div id="logoModal" class="logo-modal">
     <span class="close-modal" onclick="closeLogoModal()">&times;</span>
-    <img class="logo-modal-content" src="logo3.jpg" alt="School Logo">
+    <img class="logo-modal-content" src="images/logo3.jpg" alt="School Logo">
 </div>
 
 
