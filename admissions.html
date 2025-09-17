@@ -979,7 +979,8 @@
 
 
 
-<!-- Application Form -->
+
+    <!-- Application Form -->
 <section id="application-form" class="application-form">
     <div class="container">
         <h2 class="section-title">تقديم طلب الالتحاق</h2>
@@ -1041,8 +1042,8 @@
                 <div class="form-row">
                     <div class="form-group">
                         <label for="phone">رقم الجوال (ولي الأمر) *</label>
-                        <p style="font-size:12px; color:#d35400; margin: 5px 0;">⚠️ تأكد من صحة الرقم — سيكون وسيلة التواصل الرئيسية مع ولي الأمر.</p>
                         <input type="tel" id="phone" name="phone" required placeholder="أدخل رقم الجوال مع رمز الدولة إن لزم">
+                        <p style="font-size:12px; color:#d35400; margin: 5px 0;">⚠️ تأكد من صحة الرقم — سيكون وسيلة التواصل الرئيسية مع ولي الأمر.</p>
                     </div>
                     <div class="form-group">
                         <label for="email">البريد الإلكتروني لولي الأمر (اختياري)</label>
@@ -1063,6 +1064,10 @@
     </div>
 </section>
 
+
+
+
+
 <script>
 // Set min and max birth date dynamically (age 4 to 20)
 function setBirthDateLimits() {
@@ -1073,12 +1078,36 @@ function setBirthDateLimits() {
     const birthDateInput = document.getElementById('birthDate');
     birthDateInput.setAttribute('max', maxDate.toISOString().split('T')[0]);
     birthDateInput.setAttribute('min', minDate.toISOString().split('T')[0]);
+
+
+
 }
 
 // Validate names (at least 2 words, any letters or spaces/hyphens)
+// Validate names (at least 2 words, supports Arabic, English, hyphens, spaces)
 function validateName(name) {
-    const nameRegex = /^[\w\s\-]{2,}(?:\s[\w\s\-]+)+$/;
-    return nameRegex.test(name.trim());
+    // Trim extra spaces
+    name = name.trim();
+    
+    // Split by one or more spaces
+    const words = name.split(/\s+/);
+    
+    // Must have at least 2 words
+    if (words.length < 2) {
+        return false;
+    }
+    
+    // Each word must contain at least one valid letter (Arabic or English)
+    const arabicRegex = /[\u0600-\u06FF\u0750-\u077F\u08A0-\u08FF\uFB50-\uFDFF\uFE70-\uFEFF]/;
+    const englishRegex = /[a-zA-Z]/;
+    
+    for (let word of words) {
+        if (!arabicRegex.test(word) && !englishRegex.test(word)) {
+            return false; // Word contains neither Arabic nor English letters
+        }
+    }
+    
+    return true;
 }
 
 // Validate form before submission
@@ -1146,7 +1175,8 @@ document.getElementById('admissionForm').addEventListener('submit', async functi
         const result = await response.json();
 
         if (result.result === 'success') {
-            showMessage(`✅ تم الإرسال! ${result.message}`, 'success');
+            showMessage('تم إرسال طلبك بنجاح ✅ سيقوم فريق المدرسة بالتواصل معكم لإكمال باقي الإجراءات', 'success');
+
             form.reset();
         } else {
             throw new Error(result.message || 'حدث خطأ غير متوقع');
@@ -1188,55 +1218,43 @@ function showMessage(text, type) {
     messageDiv.innerHTML = text;
 }
 
-// Initialize date limits on page load
+/// Initialize form controls on page load
 document.addEventListener('DOMContentLoaded', function() {
     setBirthDateLimits();
-});
-</script>
 
-
-
-
-
-
-<script>
-document.getElementById('admissionForm').addEventListener('submit', async function(e) {
-    e.preventDefault(); // Stop the browser from submitting the form normally
-
-    const form = e.target;
-    const formData = new FormData(form);
-    const messageDiv = document.getElementById('form-message');
-
-    try {
-        const response = await fetch(form.action, {
-            method: 'POST',
-            body: formData
+    // ============= PHONE INPUT FILTER =============
+    // Prevent alphabetic/symbol characters in phone input (real-time cleaning)
+    const phoneInput = document.getElementById('phone');
+    if (phoneInput) {
+        phoneInput.addEventListener('input', function(e) {
+            let value = e.target.value;
+            // Keep ONLY: digits, +, -, space, (, )
+            let cleaned = value.replace(/[^+\d\s\-()]/g, '');
+            if (value !== cleaned) {
+                e.target.value = cleaned;
+            }
         });
-
-        const result = await response.json(); // Expecting JSON response from your Google Script
-
-        messageDiv.style.display = 'block';
-
-        if (result.result === 'success') {
-            messageDiv.style.backgroundColor = '#d4edda'; // Light green
-            messageDiv.style.color = '#155724'; // Dark green text
-            messageDiv.innerHTML = `<strong>✅ تم الإرسال!</strong> ${result.message}`;
-            form.reset(); // Clear the form fields
-        } else {
-            throw new Error(result.message || 'حدث خطأ غير متوقع');
-        }
-
-    } catch (error) {
-        messageDiv.style.display = 'block';
-        messageDiv.style.backgroundColor = '#f8d7da'; // Light red
-        messageDiv.style.color = '#721c24'; // Dark red text
-        messageDiv.innerHTML = `<strong>❌ خطأ:</strong> ${error.message}`;
     }
+
+    // ============= NAME INPUTS FILTER =============
+    // Prevent digits & symbols in name inputs (real-time cleaning)
+    const nameInputs = ['studentName', 'fatherName', 'motherName'];
+    nameInputs.forEach(id => {
+        const input = document.getElementById(id);
+        if (input) {
+            input.addEventListener('input', function(e) {
+                let value = e.target.value;
+                // Allow ONLY: Arabic letters, English letters, space, hyphen, apostrophe
+                let cleaned = value.replace(/[^\u0600-\u06FF\u0750-\u077F\u08A0-\u08FF\uFB50-\uFDFF\uFE70-\uFEFFa-zA-Z\s\-']/g, '');
+                if (value !== cleaned) {
+                    e.target.value = cleaned;
+                }
+            });
+        }
+    });
 });
+
 </script>
-
-
-
 
 
 
@@ -1346,22 +1364,24 @@ document.getElementById('admissionForm').addEventListener('submit', async functi
 </div>
         </div>
     </footer>
+
+
+
+
     <script>
+   
        
-
-
-        // تفعيل إرسال النموذج
+        // تفعيل إرسال النموذج اعلى الشاشه
         document.getElementById('admissionForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('تم استلام طلبكم بنجاح، سنتواصل معكم قريباً. شكراً لكم!');
+            alert('تم استلام طلبكم بنجاح. شكراً لكم!');
             this.reset();
         });
-
-    
-
-      
     
     </script>
+
+
+
 
 <!-- نافذة عرض الشعار -->
 <div id="logoModal" class="logo-modal">
